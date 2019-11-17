@@ -16,7 +16,7 @@ let mapStateToProps = (state) => {
     return {
         isAuth: state.auth.isAuth
     }
-}
+};
 
 export default compose(
     connect(mapStateToProps)
