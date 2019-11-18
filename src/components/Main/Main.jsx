@@ -6,10 +6,11 @@ import Profile from "./Content/Profile/Profile";
 import Meets from "./Content/Meets/Meets";
 import Companies from "./Content/Companies/Companies";
 import Chat from "./Content/Chat/Chat";
+import style from './Main.module.css';
 
 let Main = () => {
     return(
-        <main>
+        <main className={style.mainContainer}>
             <header>
                 <Topbar/>
             </header>
