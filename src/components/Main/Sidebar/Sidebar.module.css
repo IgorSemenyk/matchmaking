@@ -6,7 +6,9 @@
     top: 0px;
     left: 0px;
     height: 100vh;
-
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 75px;
+    box-sizing: border-box;
 }
 .menu {
     list-style: none;
@@ -40,6 +42,7 @@
     background: #2B2E3F;
     color: #FFFFFF;
     text-align: left;
+    border-left: 3px solid #FF2747;
 }
 .menu li svg path {
     fill: lightgray;
@@ -53,4 +56,52 @@
     fill: #FF2747;
     box-shadow: 0px 2px 4px rgba(255, 35, 68, 0.15);
     text-align: center;
+}
+.logoContainer img {
+    width: 231px;
+}
+.logoContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-top: 9px;
+}
+.langSwitcherContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 19px;
+    padding-bottom: 18px;
+    margin: 19px 0px;
+    border-top: 1px solid #adadad2f;
+    border-bottom: 1px solid #adadad2f;
+}
+.langSwitcherIcon svg {
+    width: 19px;
+    margin: 0px 15px;
+    text-align: center;
+}
+.langSwitcherContainer span {
+    color: #666666;
+}
+.langSwitcherContainer span.active {
+    text-shadow: 0 0 5px #ffffff;
+    color: #ffffff;
+}
+.langSwitcherIcon svg path {
+    fill: #999999;
+}
+footer p {
+    font-size: 13.4px;
+    padding: 15px 0px;
+    text-align: center;
+    color: #C7D0D9;
+    border-top: 1px solid #adadad2f;
+}
+footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
 }

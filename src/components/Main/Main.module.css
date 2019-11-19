@@ -1,3 +1,5 @@
 .mainContainer {
     padding-left: 300px;
+    background: #e8e7e7;
+    min-height: 100vh;
 }

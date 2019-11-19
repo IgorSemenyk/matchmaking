@@ -7,6 +7,7 @@ import Meets from "./Content/Meets/Meets";
 import Companies from "./Content/Companies/Companies";
 import Chat from "./Content/Chat/Chat";
 import style from './Main.module.css';
+import Dashboard from "./Content/Dashboard/Dashboard";
 
 let Main = () => {
     return(
@@ -18,6 +19,7 @@ let Main = () => {
                 <Sidebar/>
             </div>
             <div className={'content'}>
+                <Route path={'/dashboard'} render={ () => <Dashboard /> } />
                 <Route path={'/profile/:companyID?'} render={ () => <Profile /> } />
                 <Route path={'/meets'} render={ () => <Meets /> } />
                 <Route path={'/companies'} render={ () => <Companies /> } />

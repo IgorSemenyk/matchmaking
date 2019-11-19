@@ -6,11 +6,30 @@ import IconCompanies from "./Icons/IconCompanies";
 import IconMeets from "./Icons/IconMeets";
 import IconChat from "./Icons/IconChat";
 import IconLogout from "./Icons/IconLogout";
+import logo from './../../../img/logotype.png';
+import IconLang from "./Icons/IconLang";
+import IconDashboard from "./Icons/IconDashboard";
+
 const Sidebar = () => {
     return(
         <div className={style.sidebar}>
+            <div className={style.logoContainer}>
+                <img src={logo} alt=""/>
+            </div>
+            <div className={style.langSwitcherContainer}>
+                <div>
+                    <span className={style.active}>RU</span>
+                </div>
+                <div className={style.langSwitcherIcon}> <IconLang/> </div>
+                <div>
+                    <span>UKR</span>
+                </div>
+            </div>
             <nav>
                 <ul className={style.menu}>
+                    <li>
+                        <NavLink to={'/dashboard'} activeClassName={style.active}> <IconDashboard/> Dashboard </NavLink>
+                    </li>
                     <li>
                         <NavLink to={'/profile'} activeClassName={style.active}> <IconProfile/> Profile </NavLink>
                     </li>
@@ -28,6 +47,9 @@ const Sidebar = () => {
                     </li>
                 </ul>
             </nav>
+            <footer>
+                <p>Matchmaking © 2019. All rights reserved. </p>
+            </footer>
         </div>
     )
 };
