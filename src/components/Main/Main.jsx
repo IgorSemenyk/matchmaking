@@ -18,7 +18,7 @@ let Main = () => {
             <div className={'sidebar'}>
                 <Sidebar/>
             </div>
-            <div className={'content'}>
+            <div className={style.content}>
                 <Route path={'/dashboard'} render={ () => <Dashboard /> } />
                 <Route path={'/profile/:companyID?'} render={ () => <Profile /> } />
                 <Route path={'/meets'} render={ () => <Meets /> } />
