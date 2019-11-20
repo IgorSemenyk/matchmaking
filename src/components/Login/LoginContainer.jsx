@@ -1,13 +1,14 @@
 import React from 'react';
-import Login from "./Login";
+import LoginForm from "./Login";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import Main from "../Main/Main";
+import {reduxForm} from "redux-form";
 
 class LoginContainer extends React.Component {
 
     render() {
-        return this.props.isAuth ? <Main />  :  <Login />
+        return this.props.isAuth ? <Main />  :  <LoginForm />
 
     }
 }
@@ -19,5 +20,6 @@ let mapStateToProps = (state) => {
 };
 
 export default compose(
-    connect(mapStateToProps)
+    reduxForm({ form: 'login' }),
+    connect(mapStateToProps),
 )(LoginContainer);

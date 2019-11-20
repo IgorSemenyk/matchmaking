@@ -1,5 +1,5 @@
 import React from 'react'
-import {Field, reduxForm} from "redux-form";
+import {Field} from "redux-form";
 
 
 const LoginForm = () => {
@@ -9,7 +9,7 @@ const LoginForm = () => {
                 <Field component={'input'} name={'email'} placeholder={'Write your email'}/>
             </div>
             <div>
-                <Field component={'input'} name={'password'} type={'password'} placeholder={'Password'} />
+                <Field component={'input'} name={'password'} type={'password'} placeholder={'Password'} value={'dddddd'}/>
             </div>
             <div>
                 <Field component={'input'} name={'remember'} type={'checkbox'}/> Remember me
@@ -21,21 +21,7 @@ const LoginForm = () => {
     )
 }
 
-const ReduxLoginForm = reduxForm({
-    form: 'login'
-})(LoginForm)
 
 
-class Login extends React.Component {
-    render() {
-        return(
-            <div>
-                 <ReduxLoginForm />
-            </div>
-        )
-    }
 
-
-}
-
-export default Login;
+export default LoginForm;

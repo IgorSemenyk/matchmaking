@@ -53,6 +53,7 @@
     width: 21%;
     padding: 15px;
     margin-bottom: 3%;
+    padding-bottom: 0px;
 }
 .dashboardBestExibitorsItem img {
     width: 85%;
@@ -67,4 +68,71 @@
     text-overflow: ellipsis;
     text-align: center;
     padding: 15px 0px;
+}
+.dashboardBestExibitorsItem p {
+    display: block;
+    color: #6b6f80;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0px;
+    padding-bottom: 15px;
+}
+.dashboardBestExibitorsItem span {
+    display: block;
+    color: #6b6f80;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    text-align: center;
+    padding-bottom: 15px
+}
+.dashboardBestExibitorsItem button {
+    white-space: nowrap;
+    text-align: center;
+    padding: 8px 14px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    text-transform: none;
+    background: #01b5cb;
+    background: -webkit-linear-gradient(45deg, #7d051d, #ff2747) !important;
+    background: linear-gradient(45deg, #7d051d,  #ff2747) !important;
+    display: inline-block;
+    width: 47.5%;
+    margin: 8px 2px 0;
+    transition: .75s;
+    letter-spacing: 0.5px;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    margin-bottom: 30px;
+    margin-top: 14px;
+}
+.dashboardBestExibitorsItem button:hover {
+    background: none!important;
+    color: #FF2747;
+    text-align: center;
+    border: 1px solid #ff2747;
+}
+.dashboardBestExibitorsItem > div {
+    background-color: #ff2747;
+    width: 100%;
+    left: 0;
+    padding: 0 15px;
+    color: #fff;
+    border-radius: 0 0 7px 7px;
+    margin-top: 9px;
+    position: relative;
+    top: 4px;
+}
+.dashboardBestExibitorsItem > div p {
+    padding: 5px 0;
+    color: white;
+    text-align: right;
 }
