@@ -1,0 +1,83 @@
+.mainProfileContainer {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    font-family: 'Lato', sans-serif;
+    padding-left: 45px;
+    max-width: 850px;
+}
+.mainProfileContainer > form > div {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 45px 0;
+    border-bottom: 1px solid lightgray;
+    max-width: 543px;
+}
+.mainProfileContainer > form > div input[type="text"], .mainProfileContainer > form > div input[type="email"], .mainProfileContainer > form > div input[type="number"] {
+    background: white;
+    padding: 15px;
+    width: 350px;
+    border: none;
+    box-shadow: 0 0 5px lightgray;
+}
+.mainProfileContainer > form > div select {
+    background: white;
+    padding: 15px;
+    width: 350px;
+    border: none;
+    box-shadow: 0 0 5px lightgray;
+}
+.mainProfileContainer > form > div > label {
+    width: 140px;
+    font-weight: bold;
+}
+.companyLogoContainer {
+    flex-flow: column!important;
+    justify-content: space-between!important;
+    align-items: flex-start!important;
+}
+.mainProfileContainer img {
+    display: block;
+    max-width: 350px;
+    margin-bottom: 15px;
+}
+blockquote {
+    border-radius: 5px;
+    background: white;
+    text-align: center;
+    padding: 9px;
+    display: inline-block;
+    margin: 7px;
+    box-shadow: 0 0 5px lightgray;
+    font-size: 19px;
+    position: relative;
+}
+.companyCategoryVariants {
+    margin-left: 45px;
+}
+.companyCategoryVariants > div {
+    margin: 9px 0;
+}
+.multiSelectContainer {
+    width: 100%;
+    height: auto;
+    max-width: 850px!important;
+}
+blockquote span {
+    color: white;
+    font-size: 10.5px;
+    position: absolute;
+    top: -8px;
+    right: -8.3px;
+    background-color: #ff2747;
+    padding: 4px;
+    display: block;
+    height: 10px;
+    width: 10px;
+    line-height: 1;
+    border-radius: 50%;
+}
+.activeCompanyCategory {
+    width: 400px;
+}
