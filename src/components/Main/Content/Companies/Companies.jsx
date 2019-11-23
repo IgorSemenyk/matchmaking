@@ -40,35 +40,29 @@ const Companies = (props) => {
                 </div>
             </div>
             <div className={style.listContainer}>
-                <table>
-                    <thead>
-                    <tr>
-                        <td>COMPANY NAME</td>
-                        <td>CONTACT NAME</td>
-                        <td>PRODUCT CATEGORY</td>
-                        <td>BOOTH</td>
-                        <td>COUNTRY</td>
-                        <td>CATEGORY</td>
-                        <td>ACTION</td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        { props.companies.items.map( c => <tr key={c.id}>
-                            <td>{c.name}</td>
-                            <td>{c.contact}</td>
-                            <td>{c.description}</td>
-                            <td>{c.stand}</td>
-                            <td>{c.country}</td>
-                            <td>
-                                {c.category.map(category => <span>{category}</span>)}
-                            </td>
-                            <td>
-                                <button> Request Meeting </button>
-                            </td>
-                        </tr>)}
-                    </tbody>
+                <div className={style.companiesListHeaders}>
+                        <div>COMPANY NAME</div>
+                        <div>CONTACT NAME</div>
+                        <div>BOOTH</div>
+                        <div>COUNTRY</div>
+                        <div>CATEGORY</div>
+                        <div>ACTION</div>
+                </div>
+                <div className={style.companiesListContent}>
+                    { props.companies.items.map( c => <div className={style.companiesListRow} key={c.id}>
+                        <div>{c.name}</div>
+                        <div>{c.contact}</div>
+                        <div>{c.stand}</div>
+                        <div>{c.country}</div>
+                        <div>
+                            {c.category.map(category => <span>{category}</span>)}
+                        </div>
+                        <div>
+                            <button> Request Meeting </button>
+                        </div>
+                    </div>)}
+                </div>
 
-                </table>
             </div>
         </div>
     )

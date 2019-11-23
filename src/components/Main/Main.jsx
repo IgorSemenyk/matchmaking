@@ -9,7 +9,8 @@ import Dashboard from "./Content/Dashboard/Dashboard";
 import ProfileContainer from "./Content/Profile/ProfileContainer";
 import CompaniesContainer from "./Content/Companies/CompaniesContainer";
 
-let Main = () => {
+let
+    Main = () => {
     return(
         <main className={style.mainContainer}>
             <header>
