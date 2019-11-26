@@ -2,11 +2,11 @@ import React from 'react'
 import {Field} from "redux-form";
 
 
-const LoginForm = () => {
+const LoginForm = (props) => {
     return(
-        <form>
+        <form onSubmit={props.handleSubmit}>
             <div>
-                <Field component={'input'} name={'email'} placeholder={'Write your email'}/>
+                <Field component={'input'} name={'login'} placeholder={'Write your email'}/>
             </div>
             <div>
                 <Field component={'input'} name={'password'} type={'password'} placeholder={'Password'} value={'dddddd'}/>

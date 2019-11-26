@@ -1,0 +1,82 @@
+.meets {
+    font-family: 'Lato', sans-serif;
+}
+.meetsFilters {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    background: white;
+    box-shadow: 0 0 5px lightgray;
+    padding: 19px;
+}
+.meetsFilter {
+    margin: 0 19px;
+}
+
+select {
+    background: #f2f2f2 no-repeat right;
+    height: 35px!important;
+    background-position: 94%;
+    border: 1px solid #E1E1E1;
+    padding: 5px 25px 5px 15px;
+    border-radius: 25px;
+    color: #8f8e8e;
+    font-size: 13px;
+    outline: none;
+    width: 100% !important;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    cursor: default;
+    list-style: none;
+}
+.meetsContent {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    margin-top: 45px;
+    background: white;
+    box-shadow: 0 0 5px lightgray;
+    padding: 19px;
+}
+.meetsContentHeaders {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.meetsContentList {
+
+}
+.meetsContent > div > div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-top: 15px;
+    border-bottom: 1px solid lightgray;
+}
+
+.meetsContent > div.meetsContentHeaders > div {
+    padding: 15px 9px;
+    color: #111;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+    letter-spacing: 0.5px;
+    width: 14.25%;
+    font-weight: bold;
+}
+.meetsContent > div.meetsContentList > div > div {
+    width: 14.25%;
+    padding: 9px;
+    text-align: left;
+}
