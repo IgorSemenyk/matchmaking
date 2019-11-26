@@ -1,3 +1,5 @@
+import {authAPI} from "../../api/api";
+
 const SET_AUTH_DATA = 'SET-AUTH-DATA';
 
 let initialState = {
@@ -31,6 +33,14 @@ export const setAuthData = (id, login, password) => {
         login: login,
         password: password
     }
+};
+
+export const getAuthData = () => (dispatch) => {
+    authAPI.me().then(res => {
+        if(res.data.statusCode === 1) {
+            dispatch(setAuthData(res.data.id, res.data.login, res.data.password));
+        }
+    } )
 };
 
 
