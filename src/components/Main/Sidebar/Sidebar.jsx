@@ -10,7 +10,7 @@ import logo from './../../../img/logotype.png';
 import IconLang from "./Icons/IconLang";
 import IconDashboard from "./Icons/IconDashboard";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
     return(
         <div className={style.sidebar}>
             <div className={style.logoContainer}>
@@ -43,7 +43,7 @@ const Sidebar = () => {
                         <NavLink to={'/chat'} activeClassName={style.active}> <IconChat /> Chat </NavLink>
                     </li>
                     <li>
-                        <a href=""> <IconLogout/> Logout</a>
+                        <span onClick={ () => props.logout() }> <IconLogout/> Logout</span>
                     </li>
                 </ul>
             </nav>

@@ -20,7 +20,7 @@ class LoginContainer extends React.Component {
         });
     };
     render() {
-        return this.props.isAuth ? <Main />  :  <LoginReduxForm onSubmit={this.onSubmit}  />
+        return <LoginReduxForm onSubmit={this.onSubmit}  />
     }
 }
 
@@ -28,7 +28,7 @@ let LoginReduxForm = reduxForm({ form: 'login' })(Login);
 
 let mapStateToProps = (state) => {
     return {
-        isAuth: state.auth.isAuth
+
     }
 };
 

@@ -8,6 +8,7 @@ import Dashboard from "./Content/Dashboard/Dashboard";
 import ProfileContainer from "./Content/Profile/ProfileContainer";
 import CompaniesContainer from "./Content/Companies/CompaniesContainer";
 import MeetsContainer from "./Content/Meets/MeetsContainer";
+import SidebarContainer from "./Sidebar/SidebarContainer";
 
 let
     Main = () => {
@@ -17,7 +18,7 @@ let
                 <Topbar/>
             </header>
             <div className={'sidebar'}>
-                <Sidebar/>
+                <SidebarContainer/>
             </div>
             <div className={style.content}>
                 <Route path={'/dashboard'} render={ () => <Dashboard /> } />

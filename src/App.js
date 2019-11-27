@@ -3,15 +3,20 @@ import LoginContainer from "./components/Login/LoginContainer";
 import {connect} from "react-redux";
 import Main from "./components/Main/Main";
 import {getAuthData} from "./redux/reducers/authReducer";
+import Preloader from "./components/Preloader/Preloader";
 
 let mapStateToProps = (state) => {
     return {
-        isAuth: state.auth.isAuth
+        isAuth: state.auth.isAuth,
+        isFetching: state.auth.isFetching
     }
 };
 
 function App(props) {
-    props.getAuthData();
+    if( props.isFetching === true) {
+        props.getAuthData();
+            return <Preloader />;
+    }
     return <div className="appWrapper">
         { !props.isAuth ? <LoginContainer /> : <Main/> }
     </div>

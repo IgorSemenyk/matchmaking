@@ -105,3 +105,26 @@ footer {
     left: 0px;
     width: 100%;
 }
+.menu li span {
+    color: #C7D0D9;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 15px;
+    padding-left: 45px;
+    display: block;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+.menu li span.active {
+    background: #2B2E3F;
+    color: #FFFFFF;
+    text-align: left;
+    border-left: 3px solid #FF2747;
+}
