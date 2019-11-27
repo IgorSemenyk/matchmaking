@@ -6,6 +6,9 @@ const LoginForm = (props) => {
     return(
         <form onSubmit={props.handleSubmit}>
             <div>
+                <h1>Login</h1>
+            </div>
+            <div>
                 <Field component={'input'} name={'login'} placeholder={'Write your email'}/>
             </div>
             <div>

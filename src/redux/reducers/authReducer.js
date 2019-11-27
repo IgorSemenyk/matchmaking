@@ -23,7 +23,6 @@ let authReducer = (state = initialState, action) => {
                 isAuth: action.isAuth
             };
         case SET_FETCHING:
-            debugger;
             return {
                 ...state,
                 isFetching: action.isFetching
@@ -44,19 +43,6 @@ export const setAuthData = (id, login, password, isAuth) => {
         isAuth: isAuth
     }
 };
-
-export const getAuthData = () => (dispatch) => {
-    dispatch(setFetching(true));
-    authAPI.me().then(res => {
-        if(res.data.statusCode === 1) {
-            dispatch(setAuthData(res.data.id, res.data.login, res.data.password, true));
-        }
-        setTimeout(() => {dispatch(setFetching(false))}, 900);
-
-    } );
-
-};
-
 export const setFetching = (status) => {
     return {
         type: SET_FETCHING,
@@ -64,12 +50,44 @@ export const setFetching = (status) => {
     }
 };
 
-export const logout = () => (dispatch) => {
+
+
+
+export const getAuthData = () => (dispatch) => {
     dispatch(setFetching(true));
-    authAPI.logout().then(
-        dispatch(setAuthData(null, null, null, false))
-    );
-    setTimeout(() => {dispatch(setFetching(false))}, 900)
+    debugger;
+    authAPI.me().then(res => {
+        if(res.data.statusCode === 1) {
+            dispatch(setAuthData(res.data.id, res.data.login, res.data.password, true));
+        }
+        setTimeout(() => {dispatch(setFetching(false))}, 900);
+    });
 };
+
+export const logout = () => (dispatch) => {
+    debugger;
+    authAPI.logout().then( res => {
+            dispatch(setFetching(true));
+            dispatch(setAuthData(null, null, null, false));
+            setTimeout(() => {dispatch(setFetching(false))}, 3000);
+        }
+    );
+
+};
+
+export const login = (login, password) => (dispatch) => {
+    dispatch(setFetching(true));
+    authAPI.login(login, password).then( res => {
+        if(res.data.statusCode === 1){
+            dispatch(setAuthData(res.data.info.id, res.data.info.login, res.data.info.password, true));
+        } else if(res.data.statusCode === 5) {
+            alert(res.data.mesages);
+        }
+    });
+    setTimeout(() => {dispatch(setFetching(false))}, 900);
+};
+
+
+
 
 export default authReducer;

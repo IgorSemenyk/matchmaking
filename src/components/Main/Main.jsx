@@ -9,13 +9,14 @@ import ProfileContainer from "./Content/Profile/ProfileContainer";
 import CompaniesContainer from "./Content/Companies/CompaniesContainer";
 import MeetsContainer from "./Content/Meets/MeetsContainer";
 import SidebarContainer from "./Sidebar/SidebarContainer";
+import TopbarContainer from "./Topbar/TopbarContainer";
 
 let
     Main = () => {
     return(
         <main className={style.mainContainer}>
             <header>
-                <Topbar/>
+                <TopbarContainer/>
             </header>
             <div className={'sidebar'}>
                 <SidebarContainer/>

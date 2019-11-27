@@ -65,3 +65,53 @@
 .expoDateContainer small{
     padding-right: 9px;
 }
+.notificationListContainer {
+    position: absolute;
+    width: 500px;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 0 15px lightgray;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    z-index: 100;
+    top: 45px;
+    left: 46%;
+}
+.notificationItem {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: gray;
+    padding: 8px 15px;
+    border-bottom: 1px solid lightgray;
+    box-sizing: border-box;
+}
+.notificationsContainerHeader span {
+    color: white;
+    font-size: 10.5px;
+    background-color: #ff2747;
+    padding: 4px;
+    display: block;
+    height: 10px;
+    width: 10px;
+    line-height: 1;
+    border-radius: 50%;
+    position: relative;
+    top: -19px;
+    right: -4px;
+
+}
+.notificationsContainerHeader {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid black;
+}

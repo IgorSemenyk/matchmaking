@@ -2,25 +2,18 @@ import React from 'react';
 import Login from "./Login";
 import {connect} from "react-redux";
 import {compose} from "redux";
-import Main from "../Main/Main";
 import {reduxForm} from "redux-form";
-import {authAPI} from "../../api/api";
-import {setAuthData} from "../../redux/reducers/authReducer";
-
+import {login} from "../../redux/reducers/authReducer";
+import style from './Login.module.css';
 
 class LoginContainer extends React.Component {
     onSubmit = (formData) => {
-        return authAPI.login(formData.login, formData.password)
-            .then( res => {
-                if(res.data.statusCode === 1){
-                    this.props.setUser(res.data.info.id, res.data.info.login, res.data.info.password);
-                } else if(res.data.statusCode === 5) {
-                    alert(res.data.mesages);
-                }
-        });
+        return this.props.login(formData.login, formData.password);
     };
     render() {
-        return <LoginReduxForm onSubmit={this.onSubmit}  />
+        return <div className={style.loginForm}>
+            <LoginReduxForm onSubmit={this.onSubmit}  />
+        </div>
     }
 }
 
@@ -33,7 +26,7 @@ let mapStateToProps = (state) => {
 };
 
 let mapDispatchToProps = {
-    setUser: setAuthData
+    login: login
 };
 
 

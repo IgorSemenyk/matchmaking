@@ -8,7 +8,10 @@ import Preloader from "./components/Preloader/Preloader";
 let mapStateToProps = (state) => {
     return {
         isAuth: state.auth.isAuth,
-        isFetching: state.auth.isFetching
+        isFetching: state.auth.isFetching,
+        id: state.auth.id,
+        login: state.auth.login,
+        password: state.auth.password
     }
 };
 
@@ -17,8 +20,9 @@ function App(props) {
         props.getAuthData();
             return <Preloader />;
     }
+    debugger;
     return <div className="appWrapper">
-        { !props.isAuth ? <LoginContainer /> : <Main/> }
+        { (!props.isAuth ) ? <LoginContainer /> : <Main/> }
     </div>
 }
 
