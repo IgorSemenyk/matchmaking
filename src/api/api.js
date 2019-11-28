@@ -34,3 +34,12 @@ export const commonAPI = {
         })
     }
 };
+
+export const profileAPI = {
+    getProfileData() {
+        return instance.get(`profile/me`);
+    },
+    sendProfileData(data) {
+        return instance.put(`profile`, data);
+    }
+};

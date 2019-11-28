@@ -3,10 +3,17 @@ import Profile from "./Profile";
 import {compose} from "redux";
 import {connect} from "react-redux";
 import {reduxForm} from "redux-form";
+import {getProfileData, updateProfileData} from "../../../../redux/reducers/profileReducer";
 
 class ProfileContainer extends React.Component {
+    componentDidMount() {
+        this.props.getProfileData();
+    }
+    onSubmit = (formData) => {
+        this.props.updateProfileData(formData);
+    };
     render () {
-        return <Profile data={this.props.initialValues} />
+        return <ProfileReduxForm {...this.props} data={this.props.initialValues} onSubmit={this.onSubmit}  />
     }
 }
 
@@ -16,9 +23,8 @@ let mapStateToProps = (state) => {
     }
 };
 
-
+let ProfileReduxForm = reduxForm({ form: 'profile', enableReinitialize: true})(Profile)
 
 export default compose(
-    connect(mapStateToProps),
-    reduxForm({ form: 'profile', enableReinitialize: true})
+    connect(mapStateToProps, {getProfileData, updateProfileData}),
 )(ProfileContainer);

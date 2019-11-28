@@ -1,3 +1,10 @@
+import {profileAPI} from "../../api/api";
+import {setFetching} from "./authReducer";
+
+const SET_PROFILE_DATA = 'SET-PROFILE-DATA';
+
+
+
 let initialState = {
     initialValue: {
         company: 'Anigo Web Studio',
@@ -19,9 +26,44 @@ let initialState = {
 };
 
 const profileReducer = (state = initialState, action) => {
-    return {
-        ...state
+
+    switch (action.type) {
+        case SET_PROFILE_DATA:
+            debugger;
+            return {
+                ...state,
+                initialValue: {...action.initialValue}
+            };
+        default:
+            return {
+                ...state
+            }
     }
 };
+
+let setProfileData = (data) => {
+    return {
+        type: SET_PROFILE_DATA,
+        initialValue: {
+            ...data
+        }
+    }
+};
+
+
+export let getProfileData = () => (dispatch) => {
+    return profileAPI.getProfileData().then( res => {
+            dispatch(setProfileData(res.data.data))
+        })
+};
+
+export let updateProfileData = (formData) => (dispatch) => {
+    return profileAPI.sendProfileData(formData).then(res => {
+        dispatch(setFetching(true));
+        dispatch(getProfileData);
+        setTimeout(() => {dispatch(setFetching(false))}, 900);
+    })
+};
+
 
 export default profileReducer;

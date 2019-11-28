@@ -1,16 +1,17 @@
 import React from 'react';
 import {Field} from "redux-form";
 import style from './Profile.module.css';
+import LogotypeInput from "./LogotypeInput";
 
 const Profile = (props) => {
     debugger;
     return(
         <div className={style.mainProfileContainer}>
-            <form>
-                <div className={style.companyLogoContainer}>
-                    <label><img src={props.data.logotype} alt={props.data.logotype}/> </label>
-                    <Field name={'picture'} component={'input'} type={'file'} />
-                </div>
+            <div className={style.companyLogoContainer}>
+                <label><img src={props.data.logotype} alt={props.data.logotype}/> </label>
+                <LogotypeInput />
+            </div>
+            <form onSubmit={props.handleSubmit}>
                 <div>
                     <label>Company </label> 
                     <Field name={'company'} component={'input'} type={'text'}  />
@@ -55,11 +56,12 @@ const Profile = (props) => {
                 <div className={style.multiSelectContainer}>
                     <label>Category</label>
                     <div className={style.activeCompanyCategory}>
-                        { props.data.category.map(a => {
+                        { /* props.data.category.map(a => {
                             return(
                                 <blockquote> {a} <span onClick={a}>&#10008;</span></blockquote>
                             )
-                        })}
+                        })*/
+                        }
                     </div>
                     <div className={style.companyCategoryVariants}>
                         <h3>Add new category:</h3>
@@ -73,11 +75,11 @@ const Profile = (props) => {
                 <div className={style.multiSelectContainer}>
                     <label>Interest</label>
                     <div className={style.activeCompanyCategory}>
-                        { props.data.interest.map(a => {
+                        { /*props.data.interest.map(a => {
                             return(
                                 <blockquote> {a} <span onClick={a}>&#10008;</span></blockquote>
                             )
-                        })}
+                        })*/}
                     </div>
                     <div className={style.companyCategoryVariants}>
                         <h3>Add new interest:</h3>
@@ -88,6 +90,9 @@ const Profile = (props) => {
                         <div><Field name={'css'} component={'input'} type={'checkbox'} /><label>css</label></div>
                         <div><Field name={'thunk'} component={'input'} type={'checkbox'} /><label>thunk</label></div>
                     </div>
+                </div>
+                <div>
+                    <button>Save changes</button>
                 </div>
             </form>
         </div>
