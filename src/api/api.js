@@ -22,3 +22,15 @@ export const authAPI = {
         return instance.delete(`auth`);
     }
 };
+
+export const commonAPI = {
+    getCommonData(id) {
+      return instance.get(`common`)
+    },
+    readNotify(id) {
+        return instance.put(`common/notify`, {
+            id: id,
+            status: 'read'
+        })
+    }
+};

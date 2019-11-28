@@ -55,7 +55,6 @@ export const setFetching = (status) => {
 
 export const getAuthData = () => (dispatch) => {
     dispatch(setFetching(true));
-    debugger;
     authAPI.me().then(res => {
         if(res.data.statusCode === 1) {
             dispatch(setAuthData(res.data.id, res.data.login, res.data.password, true));
@@ -65,7 +64,6 @@ export const getAuthData = () => (dispatch) => {
 };
 
 export const logout = () => (dispatch) => {
-    debugger;
     authAPI.logout().then( res => {
             dispatch(setFetching(true));
             dispatch(setAuthData(null, null, null, false));

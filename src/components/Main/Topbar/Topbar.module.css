@@ -115,3 +115,23 @@
     width: 100%;
     border-bottom: 1px solid black;
 }
+.accountListContainer {
+    position: absolute;
+    right: 41px;
+    top: 45px;
+    box-sizing: border-box;
+    background: white;
+    box-shadow: 0 0 15px lightgray;
+    display: flex;
+    flex-flow: column;
+    width: 185px;
+    z-index: 109;
+}
+.accountListContainer > div {
+    font-size: 10.9px;
+    border-bottom: 1px solid lightgray;
+    padding: 9px;
+}
+.accountListContainer > div:last-child {
+    border: none;
+}
