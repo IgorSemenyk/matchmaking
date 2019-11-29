@@ -41,6 +41,9 @@ export const profileAPI = {
     },
     sendProfileData(data) {
         return instance.put(`profile`, data);
+    },
+    getCompanyInformation(id) {
+        return instance.get(`profile/` + id)
     }
 };
 
@@ -57,6 +60,9 @@ export const meetsAPI = {
             time: meet.time,
             status: 1
         })
+    },
+    deleteMeet(id) {
+        return instance.delete(`meets/?mid=` + id );
     }
 };
 

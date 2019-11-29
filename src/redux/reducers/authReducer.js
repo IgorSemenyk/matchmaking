@@ -60,6 +60,7 @@ export const getAuthData = () => (dispatch) => {
     dispatch(setFetching(true));
     authAPI.me().then(res => {
         if(res.data.statusCode === 1) {
+            debugger;
             dispatch(setAuthData(res.data.id, res.data.login, res.data.password, res.data.type,true));
         }
         setTimeout(() => {dispatch(setFetching(false))}, 900);
@@ -80,7 +81,7 @@ export const login = (login, password) => (dispatch) => {
     dispatch(setFetching(true));
     authAPI.login(login, password).then( res => {
         if(res.data.statusCode === 1){
-            dispatch(setAuthData(res.data.info.id, res.data.info.login, res.data.info.password, true));
+            dispatch(setAuthData(res.data.id, res.data.login, res.data.password, res.data.type, true));
         } else if(res.data.statusCode === 5) {
             alert(res.data.mesages);
         }

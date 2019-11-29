@@ -1,7 +1,6 @@
 import {meetsAPI} from "../../api/api";
 
 const SET_MEETS = 'SET-MEETS';
-const SET_MEET = 'SET-MEET';
 
 
 let initialState = {
@@ -44,5 +43,10 @@ export const setNewMeet = (meet) => (dispatch) => {
     )
 };
 
+export const cancelMeetData = (id) => (dispatch) => {
+    meetsAPI.deleteMeet(id).then( res => {
+        dispatch(getMeetsData());
+    })
+};
 
 export default meetsReducer;

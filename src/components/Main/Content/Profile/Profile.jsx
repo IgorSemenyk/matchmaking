@@ -52,6 +52,10 @@ const Profile = (props) => {
                     <label>Website </label>
                     <Field name={'website'} component={'input'} type={'text'} />
                 </div>
+                <div>
+                    <label>Description</label>
+                    <Field name={'description'} component={'textarea'}/>
+                </div>
                 <div className={style.multiSelectContainer}>
                     <label>Category</label>
                     <div className={style.activeCompanyCategory}>

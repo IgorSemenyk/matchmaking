@@ -2,6 +2,7 @@ import {profileAPI} from "../../api/api";
 import {setFetching} from "./authReducer";
 
 const SET_PROFILE_DATA = 'SET-PROFILE-DATA';
+const SET_COMPANY_DATA = 'SET-COMPANY-DATA';
 
 
 
@@ -20,6 +21,9 @@ let initialState = {
         category: ['backend', 'frontend', 'fullstack'],
         interest: ['javascript', 'react', 'redux']
     },
+    company: {
+
+    }
 
 
 
@@ -33,6 +37,11 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 initialValue: {...action.initialValue}
             };
+        case SET_COMPANY_DATA:
+            return {
+                ...state,
+                company: {...action.company}
+            }
         default:
             return {
                 ...state
@@ -64,5 +73,18 @@ export let updateProfileData = (formData) => (dispatch) => {
     })
 };
 
+export let getCompanyData = (id) => (dispatch) => {
+    return profileAPI.getCompanyInformation(id).then( res => {
+        debugger;
+            dispatch(setCompanyData(res.data.data));
+        });
+};
+
+export const setCompanyData = (data) => {
+    return {
+        type: SET_COMPANY_DATA,
+        company: data
+    }
+};
 
 export default profileReducer;

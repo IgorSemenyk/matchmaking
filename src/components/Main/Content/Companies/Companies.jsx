@@ -2,9 +2,12 @@ import React from 'react';
 import style from './Companies.module.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import "./../../../../App.css";
+import {NavLink} from "react-router-dom";
+
+
 
 const Companies = (props) => {
-    debugger;
     return(
         <div className={style.companies}>
             <div className={style.filtersContainer}>
@@ -53,7 +56,10 @@ const Companies = (props) => {
                 </div>
                 <div className={style.companiesListContent}>
                     { props.companies.items.map( c => <div className={style.companiesListRow} key={c.id}>
-                        <div>{c.company}</div>
+                        <div>
+                            {c.company} <br/>
+                            <NavLink to={'/company/' + c.id}>View profile </NavLink>
+                        </div>
                         <div>{c.contactName}</div>
                         <div>{c.stand}</div>
                         <div>{c.country}</div>
@@ -61,21 +67,27 @@ const Companies = (props) => {
                             { /* c.category.map(category => <span>{category}</span>) */}
                         </div>
                         <div>
-                            <DatePicker selected={props.startDate}
-                                        onChange={props.handleChange}
-                                        showTimeSelect
-                                        dateFormat="Pp"
-                                        minDate={new Date("2019/11/25")}
-                                        maxDate={new Date("2019/11/30")}
-                                        timeIntervals={15}
-                                        style={'left: -105px'}
-                            />
-                            <button onClick={ () => {props.setMeet(c.id, c.stand)}}> Request Meeting </button>
+                            <button onClick={ () => {props.setNewMeetData(c.id, c.stand)}}> Request Meeting </button>
                         </div>
                     </div>)}
                 </div>
-
+                { props.isOpen && <div className={style.newMeetContainer}>
+                    <div>
+                        <p>Select date and time:</p>
+                        <DatePicker selected={props.startDate}
+                                    onChange={props.handleChange}
+                                    showTimeSelect
+                                    dateFormat="MMMM d, hh:mm"
+                                    minDate={new Date("2019/11/19")}
+                                    maxDate={new Date("2019/11/24")}
+                                    timeIntervals={15}
+                                    inline
+                        />
+                        <button onClick={ () => {props.setMeet()} }> Complete </button>
+                    </div>
+                </div> }
             </div>
+
         </div>
     )
 };

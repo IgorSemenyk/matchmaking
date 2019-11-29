@@ -33,7 +33,7 @@ const Meets = (props) => {
                 </div>
                 <div className={style.meetsContentList}>
                     {
-                        props.meets.map(m => <div key={m.id}>
+                        props.meets.map(m => <div key={m.mid}>
                                 <div>{m.bid}</div>
                                 <div>{m.cid}</div>
                                 <div>{m.stand}</div>
@@ -41,7 +41,7 @@ const Meets = (props) => {
                                 <div>{m.time}</div>
                                 <div>{m.status}</div>
                                 <div>
-                                    <button>Cancel meet</button>
+                                    <button onClick={ () => {props.cancelMeet(m.mid)} }>Cancel meet</button>
                                 </div>
                             </div>
                         )

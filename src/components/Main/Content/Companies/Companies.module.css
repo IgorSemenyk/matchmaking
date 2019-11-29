@@ -140,3 +140,26 @@ button {
 .companiesListHeaders > div:nth-child(1) {
     width: 23.3%;
 }
+.newMeetContainer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0, 0.75);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+.newMeetContainer > div {
+    width: 450px;
+    background: white;
+    box-shadow: 0 0 5px white;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    padding: 34px;
+    box-sizing: border-box;
+}

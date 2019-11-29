@@ -1,7 +1,7 @@
 import React from 'react';
 import Meets from "./Meets";
 import {connect} from "react-redux";
-import {getMeetsData} from "../../../../redux/reducers/meetsReducer";
+import {cancelMeetData, getMeetsData} from "../../../../redux/reducers/meetsReducer";
 
 let mapStateToProps = (state) => {
     return {
@@ -16,8 +16,8 @@ class MeetsContainer extends React.Component {
         this.props.getMeetsData(this);
     }
     render() {
-        return <Meets meets={this.props.meets}/>
+        return <Meets meets={this.props.meets} cancelMeet={this.props.cancelMeetData}/>
     }
 }
 
-export default connect(mapStateToProps, { getMeetsData })(MeetsContainer);
+export default connect(mapStateToProps, { getMeetsData, cancelMeetData })(MeetsContainer);
