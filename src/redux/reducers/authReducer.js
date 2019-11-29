@@ -8,6 +8,7 @@ let initialState = {
     id: null,
     login: null,
     password: null,
+    type: null,
     isAuth: false,
     isFetching: true
 };
@@ -20,6 +21,7 @@ let authReducer = (state = initialState, action) => {
                 id: action.userID,
                 login: action.login,
                 password: action.password,
+                type: action.userType,
                 isAuth: action.isAuth
             };
         case SET_FETCHING:
@@ -34,12 +36,13 @@ let authReducer = (state = initialState, action) => {
     }
 };
 
-export const setAuthData = (id, login, password, isAuth) => {
+export const setAuthData = (id, login, password, type, isAuth ) => {
     return {
         type: SET_AUTH_DATA,
         userID: id,
         login: login,
         password: password,
+        userType: type,
         isAuth: isAuth
     }
 };
@@ -57,7 +60,7 @@ export const getAuthData = () => (dispatch) => {
     dispatch(setFetching(true));
     authAPI.me().then(res => {
         if(res.data.statusCode === 1) {
-            dispatch(setAuthData(res.data.id, res.data.login, res.data.password, true));
+            dispatch(setAuthData(res.data.id, res.data.login, res.data.password, res.data.type,true));
         }
         setTimeout(() => {dispatch(setFetching(false))}, 900);
     });

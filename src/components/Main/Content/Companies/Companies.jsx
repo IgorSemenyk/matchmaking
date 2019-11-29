@@ -1,7 +1,10 @@
 import React from 'react';
 import style from './Companies.module.css';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Companies = (props) => {
+    debugger;
     return(
         <div className={style.companies}>
             <div className={style.filtersContainer}>
@@ -50,15 +53,24 @@ const Companies = (props) => {
                 </div>
                 <div className={style.companiesListContent}>
                     { props.companies.items.map( c => <div className={style.companiesListRow} key={c.id}>
-                        <div>{c.name}</div>
-                        <div>{c.contact}</div>
+                        <div>{c.company}</div>
+                        <div>{c.contactName}</div>
                         <div>{c.stand}</div>
                         <div>{c.country}</div>
                         <div>
-                            {c.category.map(category => <span>{category}</span>)}
+                            { /* c.category.map(category => <span>{category}</span>) */}
                         </div>
                         <div>
-                            <button> Request Meeting </button>
+                            <DatePicker selected={props.startDate}
+                                        onChange={props.handleChange}
+                                        showTimeSelect
+                                        dateFormat="Pp"
+                                        minDate={new Date("2019/11/25")}
+                                        maxDate={new Date("2019/11/30")}
+                                        timeIntervals={15}
+                                        style={'left: -105px'}
+                            />
+                            <button onClick={ () => {props.setMeet(c.id, c.stand)}}> Request Meeting </button>
                         </div>
                     </div>)}
                 </div>

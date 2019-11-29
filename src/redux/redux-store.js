@@ -5,6 +5,7 @@ import profileReducer from "./reducers/profileReducer";
 import companiesReducer from "./reducers/companiesReducer";
 import thunk from "redux-thunk";
 import commonReducer from "./reducers/commonReducer";
+import meetsReducer from "./reducers/meetsReducer";
 
 
 
@@ -14,6 +15,7 @@ let reducers = combineReducers({
     profile: profileReducer,
     companies: companiesReducer,
     common: commonReducer,
+    meets: meetsReducer,
     form: formReducer
 });
 

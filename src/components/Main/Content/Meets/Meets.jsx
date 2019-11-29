@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Meets.module.css';
 
-const Meets = () => {
+const Meets = (props) => {
     return(
         <div className={style.meets}>
             <div className={style.meetsFilters}>
@@ -32,50 +32,20 @@ const Meets = () => {
                     <div>Actions</div>
                 </div>
                 <div className={style.meetsContentList}>
-                    <div>
-                        <div>Anigo Web Studio</div>
-                        <div>Varvarych Anton</div>
-                        <div>FGH-789-R</div>
-                        <div>26.11.2019</div>
-                        <div>19:00</div>
-                        <div>Complete</div>
-                        <div>
-                            <button>Cancel meet</button>
-                        </div>
-                    </div>
-                    <div>
-                        <div>Anigo Web Studio</div>
-                        <div>Varvarych Anton</div>
-                        <div>FGH-789-R</div>
-                        <div>26.11.2019</div>
-                        <div>19:00</div>
-                        <div>Complete</div>
-                        <div>
-                            <button>Cancel meet</button>
-                        </div>
-                    </div>
-                    <div>
-                        <div>Anigo Web Studio</div>
-                        <div>Varvarych Anton</div>
-                        <div>FGH-789-R</div>
-                        <div>26.11.2019</div>
-                        <div>19:00</div>
-                        <div>Complete</div>
-                        <div>
-                            <button>Cancel meet</button>
-                        </div>
-                    </div>
-                    <div>
-                        <div>Anigo Web Studio</div>
-                        <div>Varvarych Anton</div>
-                        <div>FGH-789-R</div>
-                        <div>26.11.2019</div>
-                        <div>19:00</div>
-                        <div>Complete</div>
-                        <div>
-                            <button>Cancel meet</button>
-                        </div>
-                    </div>
+                    {
+                        props.meets.map(m => <div key={m.id}>
+                                <div>{m.bid}</div>
+                                <div>{m.cid}</div>
+                                <div>{m.stand}</div>
+                                <div>{m.date}</div>
+                                <div>{m.time}</div>
+                                <div>{m.status}</div>
+                                <div>
+                                    <button>Cancel meet</button>
+                                </div>
+                            </div>
+                        )
+                    }
                 </div>
             </div>
         </div>

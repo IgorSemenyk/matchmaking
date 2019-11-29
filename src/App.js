@@ -20,7 +20,6 @@ function App(props) {
         props.getAuthData();
             return <Preloader />;
     }
-    debugger;
     return <div className="appWrapper">
         { (!props.isAuth ) ? <LoginContainer /> : <Main/> }
     </div>

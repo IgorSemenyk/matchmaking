@@ -4,7 +4,6 @@ import style from './Profile.module.css';
 import LogotypeInput from "./LogotypeInput";
 
 const Profile = (props) => {
-    debugger;
     return(
         <div className={style.mainProfileContainer}>
             <div className={style.companyLogoContainer}>

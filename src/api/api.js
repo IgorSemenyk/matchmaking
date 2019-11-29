@@ -43,3 +43,25 @@ export const profileAPI = {
         return instance.put(`profile`, data);
     }
 };
+
+export const meetsAPI = {
+    getMeets(userID, type) {
+        return instance.get(`meets/?id=` + userID + '&type=' + type );
+    },
+    setMeet(meet) {
+        return instance.post(`meets`, {
+            bid: meet.bid,
+            cid: meet.cid,
+            stand: meet.stand,
+            date: meet.date,
+            time: meet.time,
+            status: 1
+        })
+    }
+};
+
+export const companiesAPI = {
+    getCompanies() {
+        return instance.get(`profile`);
+    }
+};

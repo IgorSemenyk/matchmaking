@@ -1,3 +1,8 @@
+import {companiesAPI} from "../../api/api";
+
+const SET_COMPANIES_DATA = 'SET-COMPANIES-DATA';
+
+
 let initialState = {
     items: [
         {
@@ -59,12 +64,33 @@ let initialState = {
 };
 
 const companiesReducer = (state = initialState, action) => {
-    switch(action) {
+    switch(action.type) {
+        case SET_COMPANIES_DATA:
+            return{
+                ...state,
+                items: action.items
+            }
         default:
             return {
                 ...state
             }
     }
 };
+
+export const setCompaniesData = (companies) => {
+    return {
+        type: SET_COMPANIES_DATA,
+        items: companies
+    }
+};
+
+export const getCompaniesData = () => (dispatch) => {
+    return companiesAPI.getCompanies().then( res => {
+            dispatch(setCompaniesData(res.data.data));
+        })
+};
+
+
+
 
 export default companiesReducer;

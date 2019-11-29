@@ -29,7 +29,6 @@ const profileReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case SET_PROFILE_DATA:
-            debugger;
             return {
                 ...state,
                 initialValue: {...action.initialValue}

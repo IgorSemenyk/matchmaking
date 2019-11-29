@@ -5,7 +5,6 @@ import {NavLink, Redirect} from "react-router-dom";
 
 
 const Notifications = (props) => {
-    debugger;
   return  <div className={style.notificationListContainer} >
       <div className={style.notificationsContainerHeader}>
           <p>Your new notifications:</p>
@@ -40,7 +39,6 @@ const AccountList = () => {
 
 
 const Topbar = (props) => {
-    debugger;
     return(
         <div className={style.topbar}>
             <div className={style.userInfoContainer}>
