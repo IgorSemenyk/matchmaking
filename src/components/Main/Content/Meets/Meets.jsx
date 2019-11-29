@@ -1,7 +1,9 @@
 import React from 'react';
 import style from './Meets.module.css';
+import { format } from 'date-fns'
 
 const Meets = (props) => {
+    debugger;
     return(
         <div className={style.meets}>
             <div className={style.meetsFilters}>
@@ -37,8 +39,8 @@ const Meets = (props) => {
                                 <div>{m.bid}</div>
                                 <div>{m.cid}</div>
                                 <div>{m.stand}</div>
-                                <div>{m.date}</div>
-                                <div>{m.time}</div>
+                                <div>{ format( new Date(m.date), 'LLLL dd') }</div>
+                                <div>{ format( new Date(m.date), 'kk:mm')}</div>
                                 <div>{m.status}</div>
                                 <div>
                                     <button onClick={ () => {props.cancelMeet(m.mid)} }>Cancel meet</button>

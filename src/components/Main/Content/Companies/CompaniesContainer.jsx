@@ -4,13 +4,14 @@ import {compose} from "redux";
 import {connect} from "react-redux";
 import {getCompaniesData} from "../../../../redux/reducers/companiesReducer";
 import {setNewMeet} from "../../../../redux/reducers/meetsReducer";
-import differenceInCalendarISOYears from 'date-fns/differenceInCalendarISOYears'
+import { format } from 'date-fns'
 
 class CompaniesContainer extends React.Component {
     state = {
         newMeetContainerOpen: false,
         startDate: new Date(),
         startTime: null,
+        startDay: null,
         newMeetCompany: null,
         newMeetState: null
     };
@@ -19,10 +20,10 @@ class CompaniesContainer extends React.Component {
     }
 
     handleChange = (date) => {
-        console.log(date);
         this.setState({
-            startDate: parseISO(date.getFullYear() + '-' + date.getMonth() + '-' + date.getDay()),
-            startTime: date.getHours()
+            startDate: date,
+            startDay: format(new Date(date), 'LLLL dd'),
+            startTime: format(new Date(date), 'kk:mm')
         });
         console.log(date)
     };
@@ -59,7 +60,6 @@ class CompaniesContainer extends React.Component {
                           setMeet={this.setMeet}
                           handleChange={this.handleChange}
                           startDate={this.state.startDate}
-                          handleCalendarClose={this.handleCalendarClose}
                           setNewMeetData={this.setNewMeetData}
                           isOpen={this.state.newMeetContainerOpen}
                           cancelMeet={this.props.cancelMeetData}
