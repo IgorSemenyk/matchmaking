@@ -39,7 +39,7 @@ const Meets = (props) => {
                                 <div>{m.bid}</div>
                                 <div>{m.cid}</div>
                                 <div>{m.stand}</div>
-                                <div>{ format( new Date(m.date), 'LLLL dd') }</div>
+                                <div>{ format( new Date(m.date), 'LLLL, dd') }</div>
                                 <div>{ format( new Date(m.date), 'kk:mm')}</div>
                                 <div>{m.status}</div>
                                 <div>
