@@ -36,8 +36,8 @@ const Meets = (props) => {
                 <div className={style.meetsContentList}>
                     {
                         props.meets.map(m => <div key={m.mid}>
-                                <div>{m.bid}</div>
-                                <div>{m.cid}</div>
+                                <div>{m.company}</div>
+                                <div>{m.contactName}</div>
                                 <div>{m.stand}</div>
                                 <div>{ format( new Date(m.date), 'LLLL, dd') }</div>
                                 <div>{ format( new Date(m.date), 'kk:mm')}</div>

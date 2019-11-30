@@ -1,0 +1,146 @@
+.chat {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: 'Lato', sans-serif;
+}
+.dialogs {
+    width: 300px;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    background: white;
+    box-shadow: 0 0 15px lightgray;
+    position: relative;
+    top: -34px;
+    left: -15px;
+    z-index: 999;
+    border-top: 3px solid #323A4D;
+}
+.messages {
+    width: 75%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    background-image: url("https://previews.123rf.com/images/aldanna/aldanna1512/aldanna151200004/50116383-seamless-mobile-apps-pattern-with-music-chat-gallery-speaking-bubble-email-magnifying-glass-shopping.jpg");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: auto 450px;
+    background-color: rgba(255,255,255,0.5);
+    position: relative;
+    top: -34px;
+    left: -15px;
+    overflow-x: visible;
+    overflow-y: scroll;
+    padding: 35px 5%;
+    box-sizing: border-box;
+}
+.dialogItem {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid lightgray;
+}
+.dialogLogo {
+    width: 35px;
+    overflow: hidden;
+    height: 35px;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 5px lightgray;
+    margin-right: 15px;
+}
+.dialogLogo > img {
+    width: 100%;
+}
+.dialogItem small {
+    font-size: 10px;
+    color: lightgray;
+    display: inline-block;
+    width: 75px;
+    text-align: right;
+}
+
+.companyName {
+    width: 145px;
+}
+
+body {
+    max-height: 100vh;
+}
+
+.messageItem {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+.messageItem > div {
+    min-width: 285px;
+    background-color: #ff2747;
+    color: white;
+    border-radius: 19px;
+    padding: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px lightgray;
+    display: inline-block;
+}
+.messageItem p {
+    margin: 0;
+    color: white;
+    padding-bottom: 5px;
+}
+.messageItem small {
+    color: lightgray;
+    font-size: 10px;
+    text-align: right;
+    padding-top: 5px;
+    width: 100%;
+    display: block;
+}
+
+.yourMessage {
+    align-items: flex-end;
+}
+.yourMessage > div {
+    background-color: #3efc88;
+}
+.messageItem > span {
+    color: black;
+    font-size: 13.5px;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+}
+.yourMessage p {
+    color: black;
+}
+.yourMessage small {
+    color: gray;
+}
+.messageInput {
+    background: white;
+    box-shadow: 0 0 15px lightgray;
+    position: absolute;
+    bottom: 45px;
+    left: 0px;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.messageInput button {
+    margin-right: 50px;
+}
+.messageInput input {
+    width: 100%;
+    min-width: 285px;
+    max-width: 549px;
+}

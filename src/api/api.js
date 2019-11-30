@@ -71,3 +71,19 @@ export const companiesAPI = {
         return instance.get(`profile`);
     }
 };
+
+export const messagesAPI = {
+    getMessages(id) {
+        instance.get(`messages/` + id);
+    },
+    sendMessage(newMessage) {
+        instance.post(`messages`, { newMessage } );
+    }
+};
+
+export const dialogsAPI = {
+    getDialogs() {
+        instance.get(`dialogs`);
+    }
+};
+

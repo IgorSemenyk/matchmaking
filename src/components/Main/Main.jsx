@@ -1,6 +1,5 @@
 import React from 'react';
 import {Route} from "react-router-dom";
-import Chat from "./Content/Chat/Chat";
 import style from './Main.module.css';
 import Dashboard from "./Content/Dashboard/Dashboard";
 import ProfileContainer from "./Content/Profile/ProfileContainer";
@@ -9,6 +8,7 @@ import MeetsContainer from "./Content/Meets/MeetsContainer";
 import SidebarContainer from "./Sidebar/SidebarContainer";
 import TopbarContainer from "./Topbar/TopbarContainer";
 import CompanyContainer from "./Content/Company/CompanyContainer";
+import ChatContainer from "./Content/Chat/ChatContainer";
 
 let
     Main = () => {
@@ -25,7 +25,7 @@ let
                 <Route path={'/profile'} render={ () => <ProfileContainer /> } />
                 <Route path={'/meets'} render={ () => <MeetsContainer /> } />
                 <Route path={'/companies'} render={ () => <CompaniesContainer /> } />
-                <Route path={'/chat'} render={ () => <Chat /> } />
+                <Route path={'/chat'} render={ () => <ChatContainer /> } />
                 <Route path={'/company/:companyID?'} render={ () => <CompanyContainer /> } />
             </div>
         </main>

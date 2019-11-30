@@ -6,6 +6,7 @@ import companiesReducer from "./reducers/companiesReducer";
 import thunk from "redux-thunk";
 import commonReducer from "./reducers/commonReducer";
 import meetsReducer from "./reducers/meetsReducer";
+import chatReducer from "./reducers/chatReducer";
 
 
 
@@ -16,6 +17,7 @@ let reducers = combineReducers({
     companies: companiesReducer,
     common: commonReducer,
     meets: meetsReducer,
+    chat: chatReducer,
     form: formReducer
 });
 
