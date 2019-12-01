@@ -38,7 +38,6 @@ let setDialogs = (dialogs) => {
 };
 
 export let getDialogs = () => (dispatch) => {
-
     dialogsAPI.getDialogs().then( res => {
         dispatch(setDialogs(res.data.dialogs))
     })
@@ -60,9 +59,16 @@ export let  getMessagesData = (id) => (dispatch) => {
 };
 
 
-export let sendMessage = (id, message) => (dispatch) => {
-    messagesAPI.sendMessage(id, message).then( res => {
-        dispatch(getMessagesData(id));
+export let sendMessage = (data) => (dispatch) => {
+    messagesAPI.sendMessage(data).then( res => {
+        dispatch(getMessagesData(data.dialog));
+    })
+};
+
+
+export let setNewDialog = (id) => (dispatch) => {
+    dialogsAPI.setDialog(id).then( res => {
+        dispatch(getDialogs)
     })
 };
 

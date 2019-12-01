@@ -2,9 +2,11 @@ import React from 'react';
 import style from './Chat.module.css';
 import {NavLink, Route} from "react-router-dom";
 import ChatMessagesContainer from "./ChatMessages/ChatMessagesContainer";
+import newMessageIcon from './../../../../img/emails.png';
 
 
 const Chat = (props) => {
+    debugger;
     return(
         <div className={style.chat}>
             <div className={style.dialogs}>
@@ -18,7 +20,7 @@ const Chat = (props) => {
                                 <span>{d.company}</span>
                             </div>
                             <div>
-                                <small>Online</small>
+                                <small>{ d.hasNewMessage ? <img src={newMessageIcon} alt="" className={style.iconEmail}/> : ' ' }</small>
                             </div>
                         </div>
                     </NavLink>)

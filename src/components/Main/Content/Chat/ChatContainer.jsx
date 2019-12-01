@@ -14,7 +14,6 @@ class ChatContainer extends React.Component {
     componentDidMount() {
         this.props.getDialogs();
     }
-
     render() {
         return <Chat dialogs={this.props.dialogs} />
     }

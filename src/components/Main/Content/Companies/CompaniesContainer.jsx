@@ -5,6 +5,7 @@ import {connect} from "react-redux";
 import {getCompaniesData} from "../../../../redux/reducers/companiesReducer";
 import {setNewMeet} from "../../../../redux/reducers/meetsReducer";
 import { format } from 'date-fns'
+import {setNewDialog} from "../../../../redux/reducers/chatReducer";
 
 class CompaniesContainer extends React.Component {
     state = {
@@ -62,6 +63,7 @@ class CompaniesContainer extends React.Component {
                           setNewMeetData={this.setNewMeetData}
                           isOpen={this.state.newMeetContainerOpen}
                           cancelMeet={this.props.cancelMeetData}
+                          setDialog={this.props.setNewDialog}
         />
     }
 }
@@ -76,5 +78,5 @@ let mapStateToProps = (state) => {
 };
 
 export default compose(
-    connect(mapStateToProps, {getCompaniesData, setNewMeet})
+    connect(mapStateToProps, {getCompaniesData, setNewMeet, setNewDialog})
 )(CompaniesContainer);

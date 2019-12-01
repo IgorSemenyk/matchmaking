@@ -75,7 +75,6 @@
 body {
     max-height: 100vh;
 }
-
 .messageItem {
     width: 100%;
     display: flex;
@@ -105,7 +104,6 @@ body {
     width: 100%;
     display: block;
 }
-
 .yourMessage {
     align-items: flex-end;
 }
@@ -146,4 +144,7 @@ body {
 }
 .activeDialog {
     background: #ff2747;
+}
+.iconEmail {
+    width: 25px;
 }

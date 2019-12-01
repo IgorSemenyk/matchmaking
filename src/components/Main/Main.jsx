@@ -9,6 +9,7 @@ import SidebarContainer from "./Sidebar/SidebarContainer";
 import TopbarContainer from "./Topbar/TopbarContainer";
 import CompanyContainer from "./Content/Company/CompanyContainer";
 import ChatContainer from "./Content/Chat/ChatContainer";
+import ChatMessagesContainer from "./Content/Chat/ChatMessages/ChatMessagesContainer";
 
 let
     Main = () => {

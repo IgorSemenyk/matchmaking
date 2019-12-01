@@ -84,6 +84,9 @@ export const messagesAPI = {
 export const dialogsAPI = {
     getDialogs() {
         return instance.get(`dialogs`);
+    },
+    setDialog(id) {
+        return instance.post(`dialogs`, {id})
     }
 };
 
