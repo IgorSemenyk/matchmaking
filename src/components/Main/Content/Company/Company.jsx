@@ -2,7 +2,6 @@ import React from 'react';
 import style from './Company.module.css';
 
 const Company = (props) => {
-    debugger;
     return <div className={style.company}>
         <div className={style.mainInfo}>
             <div className={style.companyLogo}>

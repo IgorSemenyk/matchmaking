@@ -15,7 +15,6 @@ class CompanyContainer extends React.Component {
     componentDidMount() {
         let companyID = this.props.match.params.companyID;
         this.props.getCompanyData(companyID);
-        debugger;
     }
     render() {
         return <Company company={this.props.company} />

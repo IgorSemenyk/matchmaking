@@ -36,7 +36,6 @@ class CompaniesContainer extends React.Component {
         });
     };
     setMeet = () => {
-        debugger;
         this.setState({
             newMeetContainerOpen: false
         });
@@ -68,7 +67,6 @@ class CompaniesContainer extends React.Component {
 }
 
 let mapStateToProps = (state) => {
-    debugger;
     return{
         items: state.companies.items,
         userID: state.auth.id,

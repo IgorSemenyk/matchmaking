@@ -12,15 +12,21 @@ const initialState = {
 
 let chatReducer = (state = initialState, action) => {
     switch (action.type) {
-        default:
-            return {
-                ...state
-            };
         case SET_DIALOGS:
             return {
                 ...state,
                 dialogs: action.dialogs
             }
+        case SET_MESSAGES:
+            return {
+                ...state,
+                messages: action.messages
+            }
+        default:
+            return {
+                ...state
+            };
+
     }
 };
 
@@ -31,7 +37,8 @@ let setDialogs = (dialogs) => {
     }
 };
 
-let getDialogs = () => (dispatch) => {
+export let getDialogs = () => (dispatch) => {
+
     dialogsAPI.getDialogs().then( res => {
         dispatch(setDialogs(res.data.dialogs))
     })

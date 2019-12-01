@@ -32,7 +32,6 @@ export const setMeets = (meets) => {
 
 export const getMeetsData = () => (dispatch) => {
     meetsAPI.getMeets().then(res => {
-        debugger;
         dispatch(setMeets(res.data.data));
     })
 };

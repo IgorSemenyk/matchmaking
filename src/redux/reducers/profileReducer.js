@@ -75,7 +75,6 @@ export let updateProfileData = (formData) => (dispatch) => {
 
 export let getCompanyData = (id) => (dispatch) => {
     return profileAPI.getCompanyInformation(id).then( res => {
-        debugger;
             dispatch(setCompanyData(res.data.data));
         });
 };

@@ -74,16 +74,16 @@ export const companiesAPI = {
 
 export const messagesAPI = {
     getMessages(id) {
-        instance.get(`messages/` + id);
+        return instance.get(`messages/` + id);
     },
     sendMessage(newMessage) {
-        instance.post(`messages`, { newMessage } );
+        return instance.post(`messages`, { newMessage } );
     }
 };
 
 export const dialogsAPI = {
     getDialogs() {
-        instance.get(`dialogs`);
+        return instance.get(`dialogs`);
     }
 };
 

@@ -3,7 +3,6 @@ import style from './Meets.module.css';
 import { format } from 'date-fns'
 
 const Meets = (props) => {
-    debugger;
     return(
         <div className={style.meets}>
             <div className={style.meetsFilters}>

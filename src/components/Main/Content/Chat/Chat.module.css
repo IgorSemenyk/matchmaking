@@ -144,3 +144,6 @@ body {
     min-width: 285px;
     max-width: 549px;
 }
+.activeDialog {
+    background: #ff2747;
+}
