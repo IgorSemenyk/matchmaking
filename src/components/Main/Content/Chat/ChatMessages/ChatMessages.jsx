@@ -27,12 +27,17 @@ const ChatMessages = (props) => {
                     <Field component={'input'} type="text" name={'message'}/>
                     <button>Send</button>
                 </form>
-
             </div>
         </div>
     } else {
         return <div className={style.messages}>
             <h4>Not messages yet</h4>
+            <div className={style.messageInput}>
+                <form onSubmit={props.handleSubmit}>
+                    <Field component={'input'} type="text" name={'message'}/>
+                    <button>Send</button>
+                </form>
+            </div>
         </div>
     }
 };
