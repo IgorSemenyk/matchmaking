@@ -90,3 +90,15 @@ export const dialogsAPI = {
     }
 };
 
+export const notifyAPI = {
+    getNotifications() {
+        return instance.get(`notify`);
+    },
+    setNotification(notifyData) {
+        return instance.post(`notify`, notifyData)
+    },
+    updateNotifications(id) {
+        return instance.put(`notify`, {id: id, status: 'read'})
+    }
+};
+

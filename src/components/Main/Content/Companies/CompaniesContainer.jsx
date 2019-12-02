@@ -5,7 +5,9 @@ import {connect} from "react-redux";
 import {getCompaniesData} from "../../../../redux/reducers/companiesReducer";
 import {setNewMeet} from "../../../../redux/reducers/meetsReducer";
 import { format } from 'date-fns'
-import {setNewDialog} from "../../../../redux/reducers/chatReducer";
+import {getMessagesData, setNewDialog} from "../../../../redux/reducers/chatReducer";
+import {NotificationsHOC} from "../../../../hoc/setNotifications";
+import {setNotify} from "../../../../redux/reducers/notifyReducer";
 
 class CompaniesContainer extends React.Component {
     state = {
@@ -14,6 +16,7 @@ class CompaniesContainer extends React.Component {
         startTime: null,
         startDay: null,
         newMeetCompany: null,
+        newMeetCompanyName: null,
         newMeetState: null
     };
     componentDidMount() {
@@ -29,10 +32,11 @@ class CompaniesContainer extends React.Component {
         console.log(date)
     };
 
-    setNewMeetData = (companyID, stand) => {
+    setNewMeetData = (companyID, stand, name) => {
         this.setState({
             newMeetCompany: companyID,
             newMeetState: stand,
+            newMeetCompanyName: name,
             newMeetContainerOpen: true,
         });
     };
@@ -40,6 +44,7 @@ class CompaniesContainer extends React.Component {
         this.setState({
             newMeetContainerOpen: false
         });
+        this.props.setNotify('meets', this.state.newMeetCompany, {text: this.state.newMeetCompanyName });
         let newMeet = {
             bid: this.state.newMeetCompany,
             cid: this.props.userID,
@@ -53,6 +58,7 @@ class CompaniesContainer extends React.Component {
             newMeet.cid =  this.state.newMeetCompany;
         }
         this.props.setNewMeet(newMeet);
+
     };
 
     render() {
@@ -78,5 +84,6 @@ let mapStateToProps = (state) => {
 };
 
 export default compose(
+    NotificationsHOC,
     connect(mapStateToProps, {getCompaniesData, setNewMeet, setNewDialog})
 )(CompaniesContainer);

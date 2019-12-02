@@ -67,7 +67,7 @@ const Companies = (props) => {
                             { /* c.category.map(category => <span>{category}</span>) */}
                         </div>
                         <div>
-                            <button onClick={ () => {props.setNewMeetData(c.id, c.stand)}}> Request Meeting </button>
+                            <button onClick={ () => {props.setNewMeetData(c.id, c.stand, c.company)}}> Request Meeting </button>
                             <button onClick={ () => {props.setDialog(c.id)}}>Start chat</button>
                         </div>
                     </div>)}

@@ -7,6 +7,7 @@ import thunk from "redux-thunk";
 import commonReducer from "./reducers/commonReducer";
 import meetsReducer from "./reducers/meetsReducer";
 import chatReducer from "./reducers/chatReducer";
+import notifyReducer from "./reducers/notifyReducer";
 
 
 
@@ -18,6 +19,7 @@ let reducers = combineReducers({
     common: commonReducer,
     meets: meetsReducer,
     chat: chatReducer,
+    notify: notifyReducer,
     form: formReducer
 });
 
