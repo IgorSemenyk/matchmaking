@@ -26,12 +26,6 @@ export const authAPI = {
 export const commonAPI = {
     getCommonData(id) {
       return instance.get(`common`)
-    },
-    readNotify(id) {
-        return instance.put(`common/notify`, {
-            id: id,
-            status: 'read'
-        })
     }
 };
 
@@ -98,7 +92,7 @@ export const notifyAPI = {
         return instance.post(`notify`, notifyData)
     },
     updateNotifications(id) {
-        return instance.put(`notify`, {id: id, status: 'read'})
+        return instance.put(`notify`, {id: id, status: 'read'}).then( res => console.log(res.data))
     }
 };
 

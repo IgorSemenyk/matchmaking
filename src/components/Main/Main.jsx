@@ -10,9 +10,17 @@ import TopbarContainer from "./Topbar/TopbarContainer";
 import CompanyContainer from "./Content/Company/CompanyContainer";
 import ChatContainer from "./Content/Chat/ChatContainer";
 import ChatMessagesContainer from "./Content/Chat/ChatMessages/ChatMessagesContainer";
+import {connect} from "react-redux";
+import {getNotify} from "../../redux/reducers/notifyReducer";
 
-let
-    Main = () => {
+let mapStateToProps = () => {
+    return {
+
+    }
+};
+
+let Main = (props) => {
+    props.getNotify();
     return(
         <main className={style.mainContainer}>
             <header>
@@ -33,4 +41,4 @@ let
     )
 };
 
-export default Main;
+export default connect(mapStateToProps, {getNotify})(Main);

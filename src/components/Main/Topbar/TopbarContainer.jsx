@@ -2,13 +2,13 @@ import React from 'react';
 import Topbar from "./Topbar";
 import {compose} from "redux";
 import {connect} from "react-redux";
-import {readNotification} from "../../../redux/reducers/commonReducer";
-import {Redirect} from "react-router-dom";
+import {updateNotify} from "../../../redux/reducers/notifyReducer";
+import {setCommon} from "../../../redux/reducers/commonReducer";
 
 let mapStateToProps = (state) => {
     return {
         expoDate: state.common.expoDate,
-        notifications: state.common.notifications,
+        notifications: state.notify.notifications,
         lang: state.common.lang
     }
 };
@@ -28,13 +28,17 @@ class TopbarContainer extends React.Component {
             accountListStatus: status
         })
     };
+    componentDidMount() {
+        this.props.setCommon();
+    }
+
     render() {
         return <Topbar data={this.props}
                        setNotify={this.setNotifyStatus}
                        notifyStatus={this.state.notificationsOpen}
                        accountListStatus={this.state.accountListStatus}
                        setAccountListStatus={this.setAccountListStatus}
-                       readNotify={this.props.readNotification}
+                       updateNotify={this.props.updateNotify}
         />
     }
 }
@@ -42,5 +46,5 @@ class TopbarContainer extends React.Component {
 
 
 export default compose(
-    connect(mapStateToProps, {readNotification})
+    connect(mapStateToProps, {setCommon, updateNotify})
 )(TopbarContainer);

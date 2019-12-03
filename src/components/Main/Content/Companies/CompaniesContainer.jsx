@@ -5,9 +5,19 @@ import {connect} from "react-redux";
 import {getCompaniesData} from "../../../../redux/reducers/companiesReducer";
 import {setNewMeet} from "../../../../redux/reducers/meetsReducer";
 import { format } from 'date-fns'
-import {getMessagesData, setNewDialog} from "../../../../redux/reducers/chatReducer";
+import {setNewDialog} from "../../../../redux/reducers/chatReducer";
 import {NotificationsHOC} from "../../../../hoc/setNotifications";
-import {setNotify} from "../../../../redux/reducers/notifyReducer";
+
+
+let mapStateToProps = (state) => {
+    return{
+        items: state.companies.items,
+        userID: state.auth.id,
+        userType: state.auth.type,
+        userCompany: state.common.companyName
+    }
+
+};
 
 class CompaniesContainer extends React.Component {
     state = {
@@ -44,7 +54,7 @@ class CompaniesContainer extends React.Component {
         this.setState({
             newMeetContainerOpen: false
         });
-        this.props.setNotify('meets', this.state.newMeetCompany, {text: this.state.newMeetCompanyName });
+        this.props.setNotify('meets', this.state.newMeetCompany, {text: this.props.userCompany });
         let newMeet = {
             bid: this.state.newMeetCompany,
             cid: this.props.userID,
@@ -74,14 +84,7 @@ class CompaniesContainer extends React.Component {
     }
 }
 
-let mapStateToProps = (state) => {
-    return{
-        items: state.companies.items,
-        userID: state.auth.id,
-        userType: state.auth.type
-    }
 
-};
 
 export default compose(
     NotificationsHOC,

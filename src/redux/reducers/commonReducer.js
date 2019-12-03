@@ -9,7 +9,9 @@ let initialState = {
         start: '27.11.2019',
         finish: '31.11.2019'
     },
-    lang: 'RUS'
+    lang: 'RUS',
+    companyName: null,
+    companyContactName: null
 };
 
 let commonReducer = (state = initialState, action) => {
@@ -18,7 +20,7 @@ let commonReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.data
-            }
+            };
         default:
             return {
                 ...state
@@ -34,14 +36,10 @@ let setCommonData = (data) => {
 };
 
 
-export let readNotification = (notifyID, userID) => (dispatch) => {
-   commonAPI.readNotify(notifyID).then(res => {
-       commonAPI.getCommonData(userID).then( resp => {
-           dispatch(setFetching(true));
-           dispatch(setCommonData(resp.data));
-           setTimeout(() => {dispatch(setFetching(false))}, 900);
-       })
-   })
+export let setCommon = () => (dispatch) => {
+   commonAPI.getCommonData().then( res => {
+       dispatch(setCommonData(res.data.data));
+   });
 };
 
 export default commonReducer;

@@ -6,7 +6,6 @@ import newMessageIcon from './../../../../img/emails.png';
 
 
 const Chat = (props) => {
-    debugger;
     return(
         <div className={style.chat}>
             <div className={style.dialogs}>

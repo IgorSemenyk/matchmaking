@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import Main from "./components/Main/Main";
 import {getAuthData} from "./redux/reducers/authReducer";
 import Preloader from "./components/Preloader/Preloader";
+import {getNotify} from "./redux/reducers/notifyReducer";
 
 let mapStateToProps = (state) => {
     return {
@@ -25,6 +26,6 @@ function App(props) {
     </div>
 }
 
-let ConnectApp = connect(mapStateToProps, {getAuthData})(App);
+let ConnectApp = connect(mapStateToProps, {getAuthData, getNotify})(App);
 
 export default ConnectApp;

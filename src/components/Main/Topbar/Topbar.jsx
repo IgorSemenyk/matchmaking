@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Topbar.module.css'
 import IconCarret from "../Sidebar/Icons/IconCarret";
-import {NavLink, Redirect} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 
 const Notifications = (props) => {
@@ -11,14 +11,15 @@ const Notifications = (props) => {
           <span onClick={ () => { props.setNotify(false)} }>&#10008;</span>
       </div>
 
-      {props.data.map( n => <div className={style.notificationItem} onClick={ () => {
-              props.readNotify(n.id);
+      {props.data ? props.data.map( n => <div className={style.notificationItem} onClick={ () => {
+              props.updateNotify(n.id);
               window.location.href = n.link;
           } }>
                   <p>{n.message}</p>
                   <small>{n.date}</small>
               </div>
           )
+          : <p>Not notifications yet!</p>
       }
   </div>
 };
@@ -56,7 +57,7 @@ const Topbar = (props) => {
             { props.notifyStatus && <Notifications data={props.data.notifications}
                                                    setNotify={props.setNotify}
                                                    notifyStatus={props.notifyStatus}
-                                                   readNotify={props.readNotify}
+                                                   updateNotify={props.updateNotify}
             /> }
             <div className={style.expoDateContainer}>
                 <span>
