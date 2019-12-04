@@ -44,24 +44,24 @@ const Topbar = (props) => {
         <div className={style.topbar}>
             <div className={style.userInfoContainer}>
                 <div className={style.accountLogoContainer}>A</div>
-                <span onClick={ () => {props.setAccountListStatus(!props.accountListStatus) } }>Varvarych Anton <IconCarret/> </span>
-                <small>ID : 999</small>
+                <span onClick={ () => {props.setAccountListStatus(!props.accountListStatus) } }>{props.data.userContact} <IconCarret/> </span>
+                <small>ID : {props.data.userID}</small>
             </div>
             {
                 props.accountListStatus && <AccountList />
             }
-            <div className={style.notificationStyleContainer} onClick={ () => { props.setNotify(true) } }>
+            <div className={props.data.notifications ? style.notificationStyleContainer : style.notificationStyleContainer + ' ' + style.notificationIndicatorEmpty} onClick={ () => { props.setNotify(true) } }>
                 <div className={style.notificationIndicator}> </div>
-                <span>Notifications <b>3</b></span>
+                <span>Notifications <b>{ props.data.notifications ? props.data.notifications.length : '0'  }</b></span>
             </div>
-            { props.notifyStatus && <Notifications data={props.data.notifications}
+            { props.notifyStatus && props.data.notifications && <Notifications data={props.data.notifications}
                                                    setNotify={props.setNotify}
                                                    notifyStatus={props.notifyStatus}
                                                    updateNotify={props.updateNotify}
             /> }
             <div className={style.expoDateContainer}>
                 <span>
-                    <small>Expo date:</small> 19.01.2020 - 24.01.2020
+                    <small>Expo date:</small> {props.data.expoDate.start} - {props.data.expoDate.finish}
                 </span>
             </div>
         </div>

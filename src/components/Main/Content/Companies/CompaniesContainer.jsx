@@ -14,7 +14,7 @@ let mapStateToProps = (state) => {
         items: state.companies.items,
         userID: state.auth.id,
         userType: state.auth.type,
-        userCompany: state.common.companyName
+        userCompany: state.common.data.companyName
     }
 
 };

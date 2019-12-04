@@ -26,9 +26,10 @@ const Profile = (props) => {
                 <div>
                     <label>Country </label> 
                     <Field name={'country'} component={'select'}>
-                        <option value="Germany">Germany</option>
-                        <option value="Poland">Poland</option>
-                        <option value="Ukraine">Ukraine</option>
+                        <option value={'default'} disabled={true} selected={true}>--- Select your country ---</option>
+                        {
+                            props.countries.map( c => <option value={c.id}>{ c.name }</option>)
+                        }
                     </Field>
                 </div>
                 <div>
@@ -59,7 +60,7 @@ const Profile = (props) => {
                 <div className={style.multiSelectContainer}>
                     <label>Category</label>
                     <div className={style.activeCompanyCategory}>
-                        { /* props.data.category.map(a => {
+                        { /* props.category.map(a => {
                             return(
                                 <blockquote> {a} <span onClick={a}>&#10008;</span></blockquote>
                             )
@@ -68,30 +69,21 @@ const Profile = (props) => {
                     </div>
                     <div className={style.companyCategoryVariants}>
                         <h3>Add new category:</h3>
-                        <div><Field name={'backend'} component={'input'} type={'checkbox'} /><label>backend</label></div>
-                        <div><Field name={'frontend'} component={'input'} type={'checkbox'} /><label>frontend</label></div>
-                        <div><Field name={'fullstack'} component={'input'} type={'checkbox'} /><label>fullstack</label></div>
-                        <div><Field name={'yiii'} component={'input'} type={'checkbox'} /><label>yiii</label></div>
-                        <div><Field name={'angular'} component={'input'} type={'checkbox'} /><label>angular</label></div>
+                        {
+                            props.categories.map( c => <div><Field name={'category.' + c.name} component={'input'} type={'checkbox'} /><label>{c.name}</label></div>)
+                        }
                     </div>
                 </div>
                 <div className={style.multiSelectContainer}>
                     <label>Interest</label>
                     <div className={style.activeCompanyCategory}>
-                        { /*props.data.interest.map(a => {
-                            return(
-                                <blockquote> {a} <span onClick={a}>&#10008;</span></blockquote>
-                            )
-                        })*/}
+                        { /* props.data.interest.split(',').map(a => <blockquote> {a} <span onClick={a}>&#10008;</span></blockquote>) */ }
                     </div>
                     <div className={style.companyCategoryVariants}>
                         <h3>Add new interest:</h3>
-                        <div><Field name={'javascript'} component={'input'} type={'checkbox'} /><label>javascript</label></div>
-                        <div><Field name={'react'} component={'input'} type={'checkbox'} /><label>react</label></div>
-                        <div><Field name={'redux'} component={'input'} type={'checkbox'} /><label>redux</label></div>
-                        <div><Field name={'html'} component={'input'} type={'checkbox'} /><label>html</label></div>
-                        <div><Field name={'css'} component={'input'} type={'checkbox'} /><label>css</label></div>
-                        <div><Field name={'thunk'} component={'input'} type={'checkbox'} /><label>thunk</label></div>
+                        {
+                            props.interests.map( c => <div><Field name={'interest.' + c.name} component={'input'} type={'checkbox'} /><label>{c.name}</label></div>)
+                        }
                     </div>
                 </div>
                 <div>

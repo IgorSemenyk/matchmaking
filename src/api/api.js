@@ -24,7 +24,7 @@ export const authAPI = {
 };
 
 export const commonAPI = {
-    getCommonData(id) {
+    getCommonData() {
       return instance.get(`common`)
     }
 };
@@ -38,6 +38,13 @@ export const profileAPI = {
     },
     getCompanyInformation(id) {
         return instance.get(`profile/` + id)
+    },
+    setLogo(data) {
+        return instance.post(`files`, data, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
     }
 };
 

@@ -33,14 +33,38 @@ const profileReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case SET_PROFILE_DATA:
+            let categoryObject = {};
+            let interestObject = {};
+            action.initialValue.category && JSON.parse(action.initialValue.category, function(k, v) {
+                categoryObject[k] = v;
+            });
+            action.initialValue.interest && JSON.parse(action.initialValue.interest, function(k, v) {
+                interestObject[k] = v;
+            });
             return {
                 ...state,
-                initialValue: {...action.initialValue}
+                initialValue: {
+                    ...action.initialValue,
+                    category: {...categoryObject},
+                    interest: {...interestObject},
+                }
             };
         case SET_COMPANY_DATA:
+            let categoryObjectc = {};
+            let interestObjectc = {};
+            action.company.category && JSON.parse(action.company.category, function(k, v) {
+                categoryObjectc[k] = v;
+            });
+            action.company.interest && JSON.parse(action.company.interest, function(k, v) {
+                interestObjectc[k] = v;
+            });
             return {
                 ...state,
-                company: {...action.company}
+                company: {
+                    ...action.company,
+                    category: {...categoryObjectc},
+                    interest: {...interestObjectc},
+                }
             }
         default:
             return {
@@ -84,6 +108,14 @@ export const setCompanyData = (data) => {
         type: SET_COMPANY_DATA,
         company: data
     }
+};
+
+export const setLogotype = (data) => (dispatch) => {
+    profileAPI.setLogo(data).then( res => {
+        dispatch(setFetching(true));
+        dispatch(getProfileData);
+        setTimeout(() => {dispatch(setFetching(false))}, 900);
+    })
 };
 
 export default profileReducer;

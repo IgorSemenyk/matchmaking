@@ -135,3 +135,17 @@
 .accountListContainer > div:last-child {
     border: none;
 }
+.notificationStyleContainer.notificationIndicatorEmpty .notificationIndicator {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: lightgray;
+    margin-right: 9px;
+    box-shadow: none;
+}
+.notificationStyleContainer.notificationIndicatorEmpty span {
+    color: lightgray;
+}
+.notificationStyleContainer.notificationIndicatorEmpty b {
+    color: lightgray;
+}

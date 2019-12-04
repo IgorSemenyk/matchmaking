@@ -7,9 +7,11 @@ import {setCommon} from "../../../redux/reducers/commonReducer";
 
 let mapStateToProps = (state) => {
     return {
-        expoDate: state.common.expoDate,
+        expoDate: state.common.data.expoDate,
         notifications: state.notify.notifications,
-        lang: state.common.lang
+        lang: state.common.data.lang,
+        userID: state.auth.id,
+        userContact: state.common.data.companyContactName,
     }
 };
 

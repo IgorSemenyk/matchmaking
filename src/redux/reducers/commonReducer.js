@@ -5,13 +5,42 @@ const SET_COMMON_DATA = 'SET-COMMON-DATA';
 
 
 let initialState = {
-    expoDate: {
-        start: '27.11.2019',
-        finish: '31.11.2019'
+    "data": {
+        "expoDate": {
+            "start": "",
+            "finish": ""
+        },
+        "companyName": null,
+        "companyContactName": null,
+        "category": [],
+        "country": [],
+        "interest": [],
+        "counters": {
+            "meetingsAll": 0,
+            "pendingMeetings": 0,
+            "meetingsUnconfirmed": 0,
+            "dialog": 0
+        },
+        "meetsPopular": [{
+            "id": 2,
+            "type": "b",
+            "company": "MedBuy",
+            "description": "OnlineStrore",
+            "contactName": "",
+            "jobTitle": "",
+            "country": "",
+            "telephone": "",
+            "email": "",
+            "logotype": "",
+            "city": "",
+            "adress": "",
+            "website": "",
+            "category": "",
+            "interest": "",
+            "stand": ""
+        }]
     },
-    lang: 'RUS',
-    companyName: null,
-    companyContactName: null
+    "statusCode": 1
 };
 
 let commonReducer = (state = initialState, action) => {
@@ -19,7 +48,7 @@ let commonReducer = (state = initialState, action) => {
         case SET_COMMON_DATA:
             return {
                 ...state,
-                ...action.data
+                data: {...action.data}
             };
         default:
             return {

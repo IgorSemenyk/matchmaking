@@ -1,29 +1,31 @@
 import React from 'react';
 import style from './Dashboard.module.css';
 import logo from './../../../../img/logotype.png';
+import {NavLink, Redirect} from "react-router-dom";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+
     return(
         <div className={style.dashboard}>
             <div className={style.dashboardCounters}>
                 <div className={style.dashboardCounterItem}>
-                    <p>Meetings</p>
-                    <b>1</b>
+                    <p>Total meets</p>
+                    <b>{ props.counters.meetingsAll }</b>
                     <div className={style.dasboardStatusBar}></div>
                 </div>
                 <div className={style.dashboardCounterItem}>
                     <p>Pending Meetings</p>
-                    <b>5</b>
+                    <b>{ props.counters.pendingMeetings }</b>
                     <div className={style.dasboardStatusBar}></div>
                 </div>
                 <div className={style.dashboardCounterItem}>
-                    <p>Unread Messages</p>
-                    <b>4</b>
+                    <p>Unconfirmed meets</p>
+                    <b>{ props.counters.meetingsUnconfirmed}</b>
                     <div className={style.dasboardStatusBar}></div>
                 </div>
                 <div className={style.dashboardCounterItem}>
-                    <p>Connections</p>
-                    <b>19</b>
+                    <p>Dialogs</p>
+                    <b>{ props.counters.dialog }</b>
                     <div className={style.dasboardStatusBar}></div>
                 </div>
             </div>
@@ -32,86 +34,18 @@ const Dashboard = () => {
                     <h3>Best Matching Exhibitors</h3>
                 </div>
                 <div className={style.dashboardBestExibitorsContainer}>
-                    <div className={style.dashboardBestExibitorsItem}>
-                        <img src={logo} alt=""/>
-                        <b>Company Business & Trade Profile</b>
-                        <p>	FSC, Gıda Takviyeleri için Uygunluk Belgesi</p>
-                        <span>95-A-GTX</span>
-                        <button>View Profile</button>
-                        <div>
-                            <p>Turkey</p>
-                        </div>
-                    </div>
-                    <div className={style.dashboardBestExibitorsItem}>
-                        <img src={logo} alt=""/>
-                        <b>Company Business & Trade Profile</b>
-                        <p>	FSC, Gıda Takviyeleri için Uygunluk Belgesi</p>
-                        <span>95-A-GTX</span>
-                        <button>View Profile</button>
-                        <div>
-                            <p>Turkey</p>
-                        </div>
-                    </div>
-                    <div className={style.dashboardBestExibitorsItem}>
-                        <img src={logo} alt=""/>
-                        <b>Company Business & Trade Profile</b>
-                        <p>	FSC, Gıda Takviyeleri için Uygunluk Belgesi</p>
-                        <span>95-A-GTX</span>
-                        <button>View Profile</button>
-                        <div>
-                            <p>Turkey</p>
-                        </div>
-                    </div>
-                    <div className={style.dashboardBestExibitorsItem}>
-                        <img src={logo} alt=""/>
-                        <b>Company Business & Trade Profile</b>
-                        <p>	FSC, Gıda Takviyeleri için Uygunluk Belgesi</p>
-                        <span>95-A-GTX</span>
-                        <button>View Profile</button>
-                        <div>
-                            <p>Turkey</p>
-                        </div>
-                    </div>
-                    <div className={style.dashboardBestExibitorsItem}>
-                        <img src={logo} alt=""/>
-                        <b>Company Business & Trade Profile</b>
-                        <p>	FSC, Gıda Takviyeleri için Uygunluk Belgesi</p>
-                        <span>95-A-GTX</span>
-                        <button>View Profile</button>
-                        <div>
-                            <p>Turkey</p>
-                        </div>
-                    </div>
-                    <div className={style.dashboardBestExibitorsItem}>
-                        <img src={logo} alt=""/>
-                        <b>Company Business & Trade Profile</b>
-                        <p>	FSC, Gıda Takviyeleri için Uygunluk Belgesi</p>
-                        <span>95-A-GTX</span>
-                        <button>View Profile</button>
-                        <div>
-                            <p>Turkey</p>
-                        </div>
-                    </div>
-                    <div className={style.dashboardBestExibitorsItem}>
-                        <img src={logo} alt=""/>
-                        <b>Company Business & Trade Profile</b>
-                        <p>	FSC, Gıda Takviyeleri için Uygunluk Belgesi</p>
-                        <span>95-A-GTX</span>
-                        <button>View Profile</button>
-                        <div>
-                            <p>Turkey</p>
-                        </div>
-                    </div>
-                    <div className={style.dashboardBestExibitorsItem}>
-                        <img src={logo} alt=""/>
-                        <b>Company Business & Trade Profile</b>
-                        <p>	FSC, Gıda Takviyeleri için Uygunluk Belgesi</p>
-                        <span>95-A-GTX</span>
-                        <button>View Profile</button>
-                        <div>
-                            <p>Turkey</p>
-                        </div>
-                    </div>
+                    {
+                        props.pupolarCompany && props.pupolarCompany.map( c => c && <div className={style.dashboardBestExibitorsItem} key={c.id}>
+                            <img src={c.logotype} alt=""/>
+                            <b>{ c.company }</b>
+                            <p>	{ c.description }</p>
+                            <span>{c.stand }</span>
+                            <NavLink to={'/company/' + c.id}>View Profile</NavLink>
+                            <div>
+                                <p>{ c.country }</p>
+                            </div>
+                        </div>)
+                    }
                 </div>
             </div>
         </div>

@@ -10,6 +10,10 @@ class ProfileContainer extends React.Component {
         this.props.getProfileData();
     }
     onSubmit = (formData) => {
+        let categories = JSON.stringify(formData.category);
+        let interests = JSON.stringify(formData.interest);
+        formData.category = categories;
+        formData.interest = interests;
         this.props.updateProfileData(formData);
     };
     render () {
@@ -20,6 +24,9 @@ class ProfileContainer extends React.Component {
 let mapStateToProps = (state) => {
     return {
         initialValues: state.profile.initialValue,
+        categories: state.common.data.category,
+        interests: state.common.data.interest,
+        countries: state.common.data.country
     }
 };
 
