@@ -81,3 +81,21 @@ blockquote span {
 .activeCompanyCategory {
     width: 400px;
 }
+.languagesSelector {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+}
+.languagesSelector div {
+    margin-right: 15px;
+}
+textarea {
+    width: 350px;
+    min-height: 354px;
+    box-shadow: 0 0 15px lightgray;
+}
+select {
+    width: 350px!important;
+    min-height: 45px;
+    text-align: center;
+}

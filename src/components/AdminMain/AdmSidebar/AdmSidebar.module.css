@@ -1,0 +1,133 @@
+.sidebar {
+    position: relative;
+    background: linear-gradient(180deg, #323A4D 0%, #283042 100%);
+    width: 300px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 75px;
+    box-sizing: border-box;
+}
+.menu {
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    padding: 0px;
+    width: 100%;
+}
+.menu li {
+
+    display: block;
+
+}
+.menu li a {
+    color: #C7D0D9;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 15px;
+    padding-left: 45px;
+    display: block;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.menu li a.active {
+    background: #2B2E3F;
+    color: #FFFFFF;
+    text-align: left;
+    border-left: 3px solid #FF2747;
+}
+.menu li svg path {
+    fill: lightgray;
+}
+.menu li svg {
+    padding-right: 9px;
+    width: 25px;
+    text-align: center;
+}
+.menu li a.active svg path {
+    fill: #FF2747;
+    box-shadow: 0px 2px 4px rgba(255, 35, 68, 0.15);
+    text-align: center;
+}
+.logoContainer img {
+    width: 231px;
+}
+.logoContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-top: 9px;
+}
+.langSwitcherContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 19px;
+    padding-bottom: 18px;
+    margin: 19px 0px;
+    border-top: 1px solid #adadad2f;
+    border-bottom: 1px solid #adadad2f;
+}
+.langSwitcherIcon svg {
+    width: 19px;
+    margin: 0px 15px;
+    text-align: center;
+}
+.langSwitcherContainer span {
+    color: #666666;
+}
+.langSwitcherContainer span.active {
+    text-shadow: 0 0 5px #ffffff;
+    color: #ffffff;
+}
+.langSwitcherIcon svg path {
+    fill: #999999;
+}
+footer p {
+    font-size: 13.4px;
+    padding: 15px 0px;
+    text-align: center;
+    color: #C7D0D9;
+    border-top: 1px solid #adadad2f;
+}
+footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
+.menu li span {
+    color: #C7D0D9;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 15px;
+    padding-left: 45px;
+    display: block;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+.menu li span.active {
+    background: #2B2E3F;
+    color: #FFFFFF;
+    text-align: left;
+    border-left: 3px solid #FF2747;
+}
+.title {
+    color: white;
+}

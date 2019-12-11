@@ -5,6 +5,7 @@ import Main from "./components/Main/Main";
 import {getAuthData} from "./redux/reducers/authReducer";
 import Preloader from "./components/Preloader/Preloader";
 import {getNotify} from "./redux/reducers/notifyReducer";
+import AdminMainContainer from "./components/AdminMain/AdminMainContainer";
 
 let mapStateToProps = (state) => {
     return {
@@ -12,7 +13,8 @@ let mapStateToProps = (state) => {
         isFetching: state.auth.isFetching,
         id: state.auth.id,
         login: state.auth.login,
-        password: state.auth.password
+        password: state.auth.password,
+        type: state.auth.type,
     }
 };
 
@@ -22,7 +24,7 @@ function App(props) {
             return <Preloader />;
     }
     return <div className="appWrapper">
-        { (!props.isAuth ) ? <LoginContainer /> : <Main/> }
+        { (!props.isAuth ) ? <LoginContainer /> : props.type === 'a' ? <AdminMainContainer /> : <Main/> }
     </div>
 }
 

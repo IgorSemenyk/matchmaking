@@ -1,0 +1,21 @@
+.mainContainer {
+    padding-left: 300px;
+    background: #e8e7e7;
+    min-height: 100vh;
+}
+.content {
+    padding: 15px;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Lato', sans-serif;
+}
+
+header {
+    padding: 15px;
+    background: white;
+    box-shadow: 0 0 15px lightgray;
+    font-size: 19px;
+    letter-spacing: 1.5px;
+    border-left: 3px solid #FF2747;
+    margin-bottom: 45px;
+}

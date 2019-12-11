@@ -27,6 +27,7 @@ const Chat = (props) => {
             </div>
             <Route path={'/chat/:companyID'} render={ () => <ChatMessagesContainer />  }/>
         </div>
+
     )
 };
 

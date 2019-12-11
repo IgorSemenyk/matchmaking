@@ -68,7 +68,7 @@ const Companies = (props) => {
                         </div>
                         <div>
                             <button onClick={ () => {props.setNewMeetData(c.id, c.stand, c.company)}}> Request Meeting </button>
-                            <button onClick={ () => { props.setDialog(c.id) && (window.location.href = '/chat')} }>Start chat</button>
+                            <button onClick={ () => {props.setDialog(c.id) && (window.location.href = '/chat')}}>Start chat</button>
                         </div>
                     </div>)}
                 </div>
