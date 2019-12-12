@@ -40,9 +40,10 @@ const Meets = (props) => {
                                 <div>{m.stand}</div>
                                 <div>{ format( new Date(m.date), 'LLLL, dd') }</div>
                                 <div>{ format( new Date(m.date), 'kk:mm')}</div>
-                                <div>{m.status}</div>
+                                <div>{(m.status === 'Approve') ? <span className={style.green}>{m.status}</span> : <span className={style.yellow}>{m.status}</span> }</div>
                                 <div>
                                     <button onClick={ () => {props.cancelMeet(m.mid)} }>Cancel meet</button>
+                                    <button>Change date/time</button>
                                 </div>
                             </div>
                         )

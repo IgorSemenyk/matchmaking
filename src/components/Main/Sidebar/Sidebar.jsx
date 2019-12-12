@@ -47,6 +47,13 @@ const Sidebar = (props) => {
                     </li>
                 </ul>
             </nav>
+            <div className={style.consultations}>
+                <div><b>Ned help?</b></div>
+                <div>Peter Jackson</div>
+                <div>admin@matchmaking.com</div>
+                <div>+380 (99) 999 99 99</div>
+                <div><a href="">Start online chat!</a></div>
+            </div>
             <footer>
                 <p>Matchmaking © 2019. All rights reserved. </p>
             </footer>

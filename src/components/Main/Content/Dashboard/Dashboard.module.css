@@ -76,9 +76,12 @@
     font-weight: normal;
     text-transform: capitalize;
     letter-spacing: 1px;
-    text-align: center;
     margin: 0px;
     padding-bottom: 15px;
+    height: 37px;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: fade;
 }
 .dashboardBestExibitorsItem span {
     display: block;

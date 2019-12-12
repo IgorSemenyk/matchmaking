@@ -8,3 +8,9 @@
     overflow: hidden;
     position: relative;
 }
+button + button {
+    margin-top: 15px;
+}
+.clientHeader {
+    margin-bottom: 0!important;
+}

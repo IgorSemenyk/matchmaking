@@ -23,7 +23,7 @@ let Main = (props) => {
     props.getNotify();
     return(
         <main className={style.mainContainer}>
-            <header>
+            <header className={style.clientHeader}>
                 <TopbarContainer/>
             </header>
             <div className={'sidebar'}>

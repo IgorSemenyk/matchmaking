@@ -80,3 +80,12 @@ select {
     padding: 9px;
     text-align: left;
 }
+.green {
+    color: lightgreen;
+}
+.yellow {
+    color: orange;
+}
+.red {
+    color: red;
+}

@@ -60,27 +60,15 @@ const Profile = (props) => {
                 <div className={style.multiSelectContainer}>
                     <label>Category</label>
                     <div className={style.activeCompanyCategory}>
-                        { /* props.category.map(a => {
-                            return(
-                                <blockquote> {a} <span onClick={a}>&#10008;</span></blockquote>
-                            )
-                        })*/
-                        }
-                    </div>
-                    <div className={style.companyCategoryVariants}>
-                        <h3>Add new category:</h3>
                         {
                             props.categories.map( c => <div><Field name={'category.' + c.name} component={'input'} type={'checkbox'} /><label>{c.name}</label></div>)
                         }
                     </div>
+
                 </div>
                 <div className={style.multiSelectContainer}>
                     <label>Interest</label>
                     <div className={style.activeCompanyCategory}>
-                        { /* props.data.interest.split(',').map(a => <blockquote> {a} <span onClick={a}>&#10008;</span></blockquote>) */ }
-                    </div>
-                    <div className={style.companyCategoryVariants}>
-                        <h3>Add new interest:</h3>
                         {
                             props.interests.map( c => <div><Field name={'interest.' + c.name} component={'input'} type={'checkbox'} /><label>{c.name}</label></div>)
                         }

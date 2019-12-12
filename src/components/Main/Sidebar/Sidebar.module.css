@@ -128,3 +128,21 @@ footer {
     text-align: left;
     border-left: 3px solid #FF2747;
 }
+.consultations > div {
+    color: white;
+    font-size: 85%;
+    padding: 5px;
+    padding-left: 15%;
+}
+.consultations > div > b {
+    display: block;
+    width: 100%;
+    padding-bottom: 4px;
+    border-bottom: 1px solid white;
+}
+.consultations > div > a {
+    color: #FF2747
+}
+nav {
+    margin-bottom: 35px
+}

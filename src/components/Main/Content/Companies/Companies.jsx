@@ -62,9 +62,9 @@ const Companies = (props) => {
                         </div>
                         <div>{c.contactName}</div>
                         <div>{c.stand}</div>
-                        <div>{c.country}</div>
+                        <div>Ukraine</div>
                         <div>
-                            { /* c.category.map(category => <span>{category}</span>) */}
+                            Computers, Notebook, Phones
                         </div>
                         <div>
                             <button onClick={ () => {props.setNewMeetData(c.id, c.stand, c.company)}}> Request Meeting </button>

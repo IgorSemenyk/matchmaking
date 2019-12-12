@@ -24,8 +24,8 @@ const AllMeets = (props) => {
             </div>
             <div className={style.meetsContent}>
                 <div className={style.meetsContentHeaders}>
-                    <div>Company</div>
-                    <div>Contact name</div>
+                    <div>Company one</div>
+                    <div>Company another</div>
                     <div>Stand</div>
                     <div>Date</div>
                     <div>Time</div>
@@ -35,12 +35,16 @@ const AllMeets = (props) => {
                 <div className={style.meetsContentList}>
                     {
                         props.meets.map(m => <div key={m.mid}>
-                                <div>{m.company}</div>
-                                <div>{m.contactName}</div>
-                                <div>{m.stand}</div>
+                                <div>Dell</div>
+                                <div>Asus</div>
+                                <div>ZXC-9-RTYU</div>
                                 <div>{ format( new Date(m.date), 'LLLL, dd') }</div>
                                 <div>{ format( new Date(m.date), 'kk:mm')}</div>
-                                <div>{m.status}</div>
+                                <div>
+                                    { (m.status === 'Canceled') && <span className={style.red}>{m.status}</span>}
+                                    { (m.status === 'Approve') && <span className={style.green}>{m.status}</span>}
+                                    { (m.status === 'Waiting') && <span className={style.yellow}>{m.status}</span>}
+                                    </div>
                                 <div>
                                     <button onClick={ () => {props.cancelMeet(m.mid)} }>Cancel meet</button>
                                 </div>

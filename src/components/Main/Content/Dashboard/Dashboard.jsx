@@ -39,10 +39,11 @@ const Dashboard = (props) => {
                             <img src={c.logotype} alt=""/>
                             <b>{ c.company }</b>
                             <p>	{ c.description }</p>
+                            <br/>
                             <span>{c.stand }</span>
                             <NavLink to={'/company/' + c.id}>View Profile</NavLink>
                             <div>
-                                <p>{ c.country }</p>
+                                <p>Ukraine</p>
                             </div>
                         </div>)
                     }
